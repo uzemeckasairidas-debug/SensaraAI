@@ -131,7 +131,7 @@ export function Contact({ prefillIndustry }: ContactProps) {
 
   if (isComplete) {
     return (
-      <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8">
+      <section id="assessment" className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -156,7 +156,7 @@ export function Contact({ prefillIndustry }: ContactProps) {
   }
 
   return (
-    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8">
+    <section id="assessment" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

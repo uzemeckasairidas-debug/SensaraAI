@@ -9,11 +9,11 @@ const navLinks = [
     label: 'Solutions',
     dropdown: [
       { label: 'Dental & Medical', to: '/solutions/dental' },
-      { label: 'Custom Automation', to: '/#solutions' },
+      { label: 'Custom Automation', to: '/#services' },
     ],
   },
   { label: 'Process', to: '/#process' },
-  { label: 'Case Studies', to: '/#case-studies' },
+  { label: 'Case Studies', to: '/case-studies' },
 ];
 
 export function Header() {
@@ -47,7 +47,7 @@ export function Header() {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center">
               <span className="text-white font-bold text-sm">S</span>
             </div>
-            <span className="text-xl font-semibold text-white">Sensara AI</span>
+            <span className="text-xl font-semibold text-white">SensaraAI</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
@@ -98,7 +98,7 @@ export function Header() {
           </div>
 
           <div className="hidden md:block">
-            <Button to="/#contact" size="sm">
+            <Button to="/book-demo" size="sm">
               Book a Demo
             </Button>
           </div>
@@ -161,7 +161,7 @@ export function Header() {
                   </Link>
                 )
               )}
-              <Button to="/#contact" className="w-full">
+              <Button to="/book-demo" className="w-full">
                 Book a Demo
               </Button>
             </div>

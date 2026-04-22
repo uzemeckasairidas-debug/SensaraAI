@@ -3,6 +3,8 @@ import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { Home } from './pages/Home';
 import { DentalPage } from './pages/DentalPage';
+import { BookDemo } from './pages/BookDemo';
+import { CaseStudies } from './pages/CaseStudies';
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/solutions/dental" element={<DentalPage />} />
+          <Route path="/book-demo" element={<BookDemo />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
         </Routes>
         <Footer />
       </div>

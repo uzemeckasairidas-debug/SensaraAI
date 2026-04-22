@@ -50,8 +50,8 @@ export function Hero() {
           <Button to="/#solutions" size="lg">
             View Solutions
           </Button>
-          <Button to="/#contact" variant="secondary" size="lg">
-            Get a Free AI Audit
+          <Button to="/book-demo" variant="secondary" size="lg">
+            Book a Demo
           </Button>
         </motion.div>
 

@@ -27,7 +27,7 @@ export function Button({
 
   const variants = {
     primary:
-      'bg-accent-500 text-white hover:bg-accent-600 glow-accent hover:shadow-[0_0_50px_rgba(59,130,246,0.5)]',
+      'bg-accent-500 text-white hover:bg-accent-600 glow-accent hover:shadow-[0_0_50px_rgba(0,102,255,0.5)] relative overflow-hidden group',
     secondary:
       'glass text-white hover:bg-white/10 hover:border-white/20',
     ghost:
@@ -44,10 +44,19 @@ export function Button({
 
   const MotionComponent = motion.button;
 
+  const content = (
+    <>
+      <span className="relative z-10">{children}</span>
+      {variant === 'primary' && (
+        <div className="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      )}
+    </>
+  );
+
   if (to) {
     return (
       <Link to={to} className={classes}>
-        {children}
+        {content}
       </Link>
     );
   }
@@ -55,7 +64,7 @@ export function Button({
   if (href) {
     return (
       <a href={href} className={classes}>
-        {children}
+        {content}
       </a>
     );
   }
@@ -68,7 +77,7 @@ export function Button({
       disabled={disabled}
       className={classes}
     >
-      {children}
+      {content}
     </MotionComponent>
   );
 }

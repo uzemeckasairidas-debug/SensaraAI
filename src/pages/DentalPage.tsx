@@ -105,7 +105,7 @@ export function DentalPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button to="#contact" size="lg">
+            <Button to="#assessment" size="lg">
               Get Free Assessment
             </Button>
             <Button href="#stats" variant="secondary" size="lg">
@@ -229,10 +229,10 @@ export function DentalPage() {
               Ready to Transform Your Practice?
             </h2>
             <p className="text-white/60 mb-8 max-w-xl mx-auto">
-              Join 50+ dental clinics already using Sensara AI to reduce no-shows and automate
+              Join 50+ dental clinics already using SensaraAI to reduce no-shows and automate
               patient booking.
             </p>
-            <Button to="#contact" size="lg">
+            <Button to="#assessment" size="lg">
               Get Your Free Assessment
               <ArrowRight className="w-4 h-4" />
             </Button>

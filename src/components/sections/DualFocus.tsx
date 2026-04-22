@@ -5,7 +5,7 @@ import { Button } from '../ui/Button';
 
 export function DualFocus() {
   return (
-    <section id="solutions" className="py-24 px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -86,7 +86,7 @@ export function DualFocus() {
                 ))}
               </ul>
 
-              <Button to="/#contact" variant="secondary">
+              <Button to="/#assessment" variant="secondary">
                 Request Custom Solution
               </Button>
             </div>

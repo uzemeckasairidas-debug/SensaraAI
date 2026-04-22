@@ -11,9 +11,9 @@ export default {
           600: '#1a1a28',
         },
         accent: {
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
+          400: '#3385ff',
+          500: '#0066FF',
+          600: '#0052cc',
         },
       },
       fontFamily: {
@@ -24,11 +24,16 @@ export default {
       },
       animation: {
         'glow': 'glow 2s ease-in-out infinite alternate',
+        'shimmer': 'shimmer 2.5s infinite linear',
       },
       keyframes: {
         glow: {
-          '0%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)' },
-          '100%': { boxShadow: '0 0 40px rgba(59, 130, 246, 0.6)' },
+          '0%': { boxShadow: '0 0 20px rgba(0, 102, 255, 0.3)' },
+          '100%': { boxShadow: '0 0 40px rgba(0, 102, 255, 0.6)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
         },
       },
     },
