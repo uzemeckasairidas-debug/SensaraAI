@@ -1,7 +1,12 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../../lib/i18n/LanguageContext';
 import { Button } from '../ui/Button';
+import { Logo } from '../ui/Logo';
 
 export function Hero() {
+  const { t } = useLanguage();
+  const h = t.hero;
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-accent-500/5 via-transparent to-transparent" />
@@ -14,9 +19,18 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="flex justify-center mb-8"
+        >
+          <Logo variant="hero" linkToHome={false} />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.05 }}
         >
           <span className="inline-block px-4 py-2 mb-6 text-sm font-medium text-accent-400 glass rounded-full">
-            AI-Powered Growth Automation
+            {h.badge}
           </span>
         </motion.div>
 
@@ -26,9 +40,9 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
         >
-          <span className="text-white">Intelligent Systems for</span>
+          <span className="text-white">{h.titleLine1}</span>
           <br />
-          <span className="text-gradient">High-Growth Enterprises</span>
+          <span className="text-gradient">{h.titleLine2}</span>
         </motion.h1>
 
         <motion.p
@@ -37,8 +51,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg sm:text-xl text-white/60 max-w-3xl mx-auto mb-10 leading-relaxed"
         >
-          We deploy specialized AI agents that automate patient acquisition, lead management,
-          and complex workflows. Built for precision. Scaleable by design.
+          {h.subtitle}
         </motion.p>
 
         <motion.div
@@ -47,11 +60,11 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Button to="/#solutions" size="lg">
-            View Solutions
+          <Button to="/services" size="lg">
+            {h.viewSolutions}
           </Button>
-          <Button to="/book-demo" variant="secondary" size="lg">
-            Book a Demo
+          <Button href="/#assessment" variant="secondary" size="lg">
+            {h.bookDemo}
           </Button>
         </motion.div>
 
@@ -61,12 +74,12 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.5 }}
           className="mt-20"
         >
-          <div className="flex items-center justify-center gap-8 text-white/40 text-sm">
-            <span>Trusted by 50+ enterprises</span>
-            <span className="w-1 h-1 rounded-full bg-white/40" />
-            <span>GDPR Compliant</span>
-            <span className="w-1 h-1 rounded-full bg-white/40" />
-            <span>24/7 AI Coverage</span>
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-white/40 text-sm">
+            <span>{h.trusted}</span>
+            <span className="hidden sm:block w-1 h-1 rounded-full bg-white/40" />
+            <span>{h.gdpr}</span>
+            <span className="hidden sm:block w-1 h-1 rounded-full bg-white/40" />
+            <span>{h.coverage}</span>
           </div>
         </motion.div>
       </div>

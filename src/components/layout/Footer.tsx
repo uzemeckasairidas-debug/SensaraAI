@@ -1,55 +1,62 @@
 import { Link } from 'react-router-dom';
 import { Mail, MapPin } from 'lucide-react';
+import { useLanguage } from '../../../lib/i18n/LanguageContext';
+import { LanguageToggle } from '../i18n/LanguageToggle';
+import { Logo } from '../ui/Logo';
 
 export function Footer() {
+  const { t } = useLanguage();
+  const f = t.footer;
+
+  const footerLinks = [
+    { label: f.solutions, to: '/services' },
+    { label: f.about, to: '/about' },
+    { label: f.caseStudies, to: '/case-studies' },
+    { label: f.contact, to: '/contact' },
+  ];
+
   return (
     <footer className="py-16 px-4 sm:px-6 lg:px-8 border-t border-white/10">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">S</span>
-              </div>
-              <span className="text-xl font-semibold text-white">SensaraAI</span>
-            </Link>
-            <p className="text-white/60 max-w-sm leading-relaxed">
-              Intelligent AI systems for high-growth enterprises. Automate patient acquisition,
-              lead management, and complex workflows.
-            </p>
+            <div className="mb-4">
+              <Logo size="sm" />
+            </div>
+            <p className="text-white/60 max-w-sm leading-relaxed">{f.tagline}</p>
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4">Solutions</h4>
+            <h4 className="text-white font-semibold mb-4">{f.links}</h4>
             <ul className="space-y-3">
-              <li>
-                <Link to="/solutions/dental" className="text-white/60 hover:text-white transition-colors">
-                  Dental & Medical
-                </Link>
-              </li>
-              <li>
-                <Link to="/#solutions" className="text-white/60 hover:text-white transition-colors">
-                  Custom Automation
-                </Link>
-              </li>
-              <li>
-                <Link to="/#process" className="text-white/60 hover:text-white transition-colors">
-                  Our Process
-                </Link>
-              </li>
+              {footerLinks.map((link) => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4">Contact</h4>
+            <h4 className="text-white font-semibold mb-4">{f.contact}</h4>
             <ul className="space-y-3">
-              <li className="flex items-center gap-2 text-white/60">
-                <Mail className="w-4 h-4" />
-                airidas@sensaraai.com
+              <li>
+                <a
+                  href={`mailto:${f.email}`}
+                  className="flex items-center gap-2 text-white/60 hover:text-white transition-colors"
+                >
+                  <Mail className="w-4 h-4 shrink-0" />
+                  {f.email}
+                </a>
               </li>
               <li className="flex items-center gap-2 text-white/60">
-                <MapPin className="w-4 h-4" />
-                Vilnius, Lithuania
+                <MapPin className="w-4 h-4 shrink-0" />
+                {f.location}
               </li>
             </ul>
           </div>
@@ -57,15 +64,18 @@ export function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-white/40 text-sm">
-            {new Date().getFullYear()} SensaraAI. All rights reserved.
+            {new Date().getFullYear()} {f.copyright}
           </p>
-          <div className="flex gap-6 text-white/40 text-sm">
-            <Link to="#" className="hover:text-white transition-colors">
-              Privacy Policy
-            </Link>
-            <Link to="#" className="hover:text-white transition-colors">
-              Terms of Service
-            </Link>
+          <div className="flex items-center gap-6">
+            <LanguageToggle />
+            <div className="flex gap-6 text-white/40 text-sm">
+              <Link to="#" className="hover:text-white transition-colors">
+                {f.privacy}
+              </Link>
+              <Link to="#" className="hover:text-white transition-colors">
+                {f.terms}
+              </Link>
+            </div>
           </div>
         </div>
       </div>

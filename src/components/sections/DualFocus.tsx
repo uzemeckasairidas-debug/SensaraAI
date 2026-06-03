@@ -1,9 +1,13 @@
 import { motion } from 'framer-motion';
 import { Stethoscope, Settings } from 'lucide-react';
+import { useLanguage } from '../../../lib/i18n/LanguageContext';
 import { Card } from '../ui/Card';
 import { Button } from '../ui/Button';
 
 export function DualFocus() {
+  const { t } = useLanguage();
+  const d = t.twoPaths;
+
   return (
     <section id="services" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -14,13 +18,8 @@ export function DualFocus() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Two Paths to AI Transformation
-          </h2>
-          <p className="text-white/60 max-w-2xl mx-auto">
-            Whether you need industry-specific precision or custom enterprise automation,
-            we have the solution.
-          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">{d.title}</h2>
+          <p className="text-white/60 max-w-2xl mx-auto">{d.subtitle}</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -32,19 +31,11 @@ export function DualFocus() {
                 <Stethoscope className="w-7 h-7 text-accent-400" />
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-3">Industry Specific</h3>
-              <p className="text-white/60 mb-6 leading-relaxed">
-                High-precision AI agents built for Medical and Dental clinics. Automate patient
-                booking, reduce no-shows, and provide 24/7 coverage with native-language support.
-              </p>
+              <h3 className="text-2xl font-bold text-white mb-3">{d.industryTitle}</h3>
+              <p className="text-white/60 mb-6 leading-relaxed">{d.industryDesc}</p>
 
               <ul className="space-y-3 mb-8">
-                {[
-                  '24/7 AI-powered booking agents',
-                  'Native Lithuanian language support',
-                  'HIPAA & GDPR compliant',
-                  '42% average no-show reduction',
-                ].map((item) => (
+                {d.industryFeatures.map((item) => (
                   <li key={item} className="flex items-center gap-3 text-white/70">
                     <div className="w-1.5 h-1.5 rounded-full bg-accent-400" />
                     {item}
@@ -53,7 +44,7 @@ export function DualFocus() {
               </ul>
 
               <Button to="/solutions/dental" variant="secondary">
-                Explore Dental Solutions
+                {d.industryCta}
               </Button>
             </div>
           </Card>
@@ -66,19 +57,11 @@ export function DualFocus() {
                 <Settings className="w-7 h-7 text-white" />
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-3">Custom Automation</h3>
-              <p className="text-white/60 mb-6 leading-relaxed">
-                Enterprise-grade workflow AI tailored to your unique business processes.
-                From lead routing to complex multi-system integrations.
-              </p>
+              <h3 className="text-2xl font-bold text-white mb-3">{d.customTitle}</h3>
+              <p className="text-white/60 mb-6 leading-relaxed">{d.customDesc}</p>
 
               <ul className="space-y-3 mb-8">
-                {[
-                  'Custom AI agent development',
-                  'CRM & tool integrations',
-                  'Workflow automation pipelines',
-                  'Scalable infrastructure',
-                ].map((item) => (
+                {d.customFeatures.map((item) => (
                   <li key={item} className="flex items-center gap-3 text-white/70">
                     <div className="w-1.5 h-1.5 rounded-full bg-white/50" />
                     {item}
@@ -87,7 +70,7 @@ export function DualFocus() {
               </ul>
 
               <Button to="/#assessment" variant="secondary">
-                Request Custom Solution
+                {d.customCta}
               </Button>
             </div>
           </Card>

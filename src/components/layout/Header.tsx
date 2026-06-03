@@ -2,30 +2,32 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Menu, X } from 'lucide-react';
+import { useLanguage } from '../../../lib/i18n/LanguageContext';
+import { LanguageToggle } from '../i18n/LanguageToggle';
 import { Button } from '../ui/Button';
+import { Logo } from '../ui/Logo';
 
 const navLinks = [
   {
-    label: 'Solutions',
+    key: 'solutions' as const,
     dropdown: [
-      { label: 'Dental & Medical', to: '/solutions/dental' },
-      { label: 'Custom Automation', to: '/#services' },
+      { key: 'dentalMedical' as const, to: '/solutions/dental' },
+      { key: 'customAutomation' as const, to: '/#services' },
     ],
   },
-  { label: 'Process', to: '/#process' },
-  { label: 'Case Studies', to: '/case-studies' },
+  { key: 'process' as const, to: '/#process' },
+  { key: 'caseStudies' as const, to: '/case-studies' },
 ];
 
 export function Header() {
+  const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -43,28 +45,23 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center">
-              <span className="text-white font-bold text-sm">S</span>
-            </div>
-            <span className="text-xl font-semibold text-white">SensaraAI</span>
-          </Link>
+          <Logo variant="navbar" />
 
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) =>
               link.dropdown ? (
                 <div
-                  key={link.label}
+                  key={link.key}
                   className="relative"
-                  onMouseEnter={() => setOpenDropdown(link.label)}
+                  onMouseEnter={() => setOpenDropdown(link.key)}
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
                   <button className="flex items-center gap-1 text-white/70 hover:text-white transition-colors">
-                    {link.label}
+                    {t.nav[link.key]}
                     <ChevronDown className="w-4 h-4" />
                   </button>
                   <AnimatePresence>
-                    {openDropdown === link.label && (
+                    {openDropdown === link.key && (
                       <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -74,11 +71,11 @@ export function Header() {
                       >
                         {link.dropdown.map((item) => (
                           <Link
-                            key={item.label}
+                            key={item.key}
                             to={item.to}
                             className="block px-4 py-2 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
                           >
-                            {item.label}
+                            {t.nav[item.key]}
                           </Link>
                         ))}
                       </motion.div>
@@ -87,28 +84,32 @@ export function Header() {
                 </div>
               ) : (
                 <Link
-                  key={link.label}
+                  key={link.key}
                   to={link.to || '#'}
                   className="text-white/70 hover:text-white transition-colors"
                 >
-                  {link.label}
+                  {t.nav[link.key]}
                 </Link>
               )
             )}
           </div>
 
-          <div className="hidden md:block">
-            <Button to="/book-demo" size="sm">
-              Book a Demo
+          <div className="hidden md:flex items-center gap-3">
+            <LanguageToggle />
+            <Button href="/#assessment" size="sm">
+              {t.nav.bookDemo}
             </Button>
           </div>
 
-          <button
-            className="md:hidden p-2 text-white"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex md:hidden items-center gap-2">
+            <LanguageToggle />
+            <button
+              className="p-2 text-white"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </nav>
       </div>
 
@@ -123,29 +124,29 @@ export function Header() {
             <div className="p-4 space-y-4">
               {navLinks.map((link) =>
                 link.dropdown ? (
-                  <div key={link.label}>
+                  <div key={link.key}>
                     <button
                       onClick={() =>
-                        setOpenDropdown(openDropdown === link.label ? null : link.label)
+                        setOpenDropdown(openDropdown === link.key ? null : link.key)
                       }
                       className="flex items-center justify-between w-full text-white/70"
                     >
-                      {link.label}
+                      {t.nav[link.key]}
                       <ChevronDown
                         className={`w-4 h-4 transition-transform ${
-                          openDropdown === link.label ? 'rotate-180' : ''
+                          openDropdown === link.key ? 'rotate-180' : ''
                         }`}
                       />
                     </button>
-                    {openDropdown === link.label && (
+                    {openDropdown === link.key && (
                       <div className="mt-2 ml-4 space-y-2">
                         {link.dropdown.map((item) => (
                           <Link
-                            key={item.label}
+                            key={item.key}
                             to={item.to}
                             className="block py-2 text-white/60 hover:text-white"
                           >
-                            {item.label}
+                            {t.nav[item.key]}
                           </Link>
                         ))}
                       </div>
@@ -153,16 +154,16 @@ export function Header() {
                   </div>
                 ) : (
                   <Link
-                    key={link.label}
+                    key={link.key}
                     to={link.to || '#'}
                     className="block text-white/70 hover:text-white"
                   >
-                    {link.label}
+                    {t.nav[link.key]}
                   </Link>
                 )
               )}
-              <Button to="/book-demo" className="w-full">
-                Book a Demo
+              <Button href="/#assessment" className="w-full">
+                {t.nav.bookDemo}
               </Button>
             </div>
           </motion.div>

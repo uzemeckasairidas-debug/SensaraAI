@@ -1,66 +1,15 @@
 import { motion } from 'framer-motion';
-import { Phone, Calendar, TrendingDown, Clock, Star, ArrowRight } from 'lucide-react';
+import { Phone, TrendingDown, Clock, Star, ArrowRight, type LucideIcon } from 'lucide-react';
+import { useLanguage } from '../../lib/i18n/LanguageContext';
 import { Button } from '../components/ui/Button';
 import { Contact } from '../components/sections/Contact';
 
-const stats = [
-  { value: '42%', label: 'Reduction in No-shows', icon: TrendingDown },
-  { value: '24/7', label: 'Booking Coverage', icon: Clock },
-  { value: '3x', label: 'Faster Response Time', icon: Phone },
-  { value: '89%', label: 'Patient Satisfaction', icon: Star },
-];
-
-const features = [
-  {
-    title: 'AI-Powered Scheduling',
-    description:
-      'Intelligent booking agents that understand patient preferences, insurance requirements, and appointment types.',
-  },
-  {
-    title: 'Automated Reminders',
-    description:
-      'Multi-channel reminders via SMS, email, and voice calls that reduce no-shows by up to 42%.',
-  },
-  {
-    title: 'Native Lithuanian Support',
-    description:
-      'AI agents trained for natural Lithuanian conversations, understanding local context and expressions.',
-  },
-  {
-    title: 'Seamless Integration',
-    description:
-      'Works with your existing practice management software. No technical changes required on your end.',
-  },
-];
-
-const testimonials = [
-  {
-    name: 'Dr. Aiste Petronyte',
-    role: 'Dental Clinic Director',
-    clinic: 'Vilnius Smile Center',
-    content:
-      'We went from 15% no-show rate to under 6% in just two months. The AI handles after-hours booking perfectly.',
-    rating: 5,
-  },
-  {
-    name: 'Dr. Mindaugas Zukauskas',
-    role: 'Practice Owner',
-    clinic: 'Kaunas Dental Arts',
-    content:
-      'Patients often do not realize they are talking to AI. The Lithuanian language support is exceptional.',
-    rating: 5,
-  },
-  {
-    name: 'Dr. Egle Kazlauskaite',
-    role: 'Orthodontist',
-    clinic: 'Smile Studio',
-    content:
-      'Our front desk staff can now focus on in-person patients while AI handles all phone bookings.',
-    rating: 5,
-  },
-];
+const statIcons: LucideIcon[] = [TrendingDown, Clock, Phone, Star];
 
 export function DentalPage() {
+  const { t, language } = useLanguage();
+  const d = t.dentalPage;
+
   return (
     <main className="pt-20">
       <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -74,7 +23,7 @@ export function DentalPage() {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block px-4 py-2 mb-6 text-sm font-medium text-accent-400 glass rounded-full">
-              Dental & Medical Solutions
+              {d.badge}
             </span>
           </motion.div>
 
@@ -84,9 +33,9 @@ export function DentalPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6"
           >
-            Fill Every Chair.
+            {d.titleLine1}
             <br />
-            <span className="text-gradient">Never Miss a Call.</span>
+            <span className="text-gradient">{d.titleLine2}</span>
           </motion.h1>
 
           <motion.p
@@ -95,8 +44,7 @@ export function DentalPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg sm:text-xl text-white/60 max-w-3xl mx-auto mb-10"
           >
-            AI-powered booking agents that work 24/7, speak Lithuanian natively, and reduce
-            no-shows by up to 42%. Built specifically for dental and medical clinics.
+            {d.subtitle}
           </motion.p>
 
           <motion.div
@@ -105,11 +53,11 @@ export function DentalPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button to="#assessment" size="lg">
-              Get Free Assessment
+            <Button href="#assessment" size="lg">
+              {d.ctaPrimary}
             </Button>
             <Button href="#stats" variant="secondary" size="lg">
-              See ROI Stats
+              {d.ctaSecondary}
             </Button>
           </motion.div>
         </div>
@@ -118,20 +66,23 @@ export function DentalPage() {
       <section id="stats" className="py-24 px-4 sm:px-6 lg:px-8 bg-dark-800/50">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-card p-6 text-center"
-              >
-                <stat.icon className="w-8 h-8 text-accent-400 mx-auto mb-3" />
-                <div className="text-3xl sm:text-4xl font-bold text-white mb-1">{stat.value}</div>
-                <div className="text-white/60 text-sm">{stat.label}</div>
-              </motion.div>
-            ))}
+            {d.stats.map((stat, index) => {
+              const Icon = statIcons[index];
+              return (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="glass-card p-6 text-center"
+                >
+                  <Icon className="w-8 h-8 text-accent-400 mx-auto mb-3" />
+                  <div className="text-3xl sm:text-4xl font-bold text-white mb-1">{stat.value}</div>
+                  <div className="text-white/60 text-sm">{stat.label}</div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -145,16 +96,12 @@ export function DentalPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Built for Dental Practices
-            </h2>
-            <p className="text-white/60 max-w-2xl mx-auto">
-              Every feature designed to solve the unique challenges of dental clinic management.
-            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">{d.featuresTitle}</h2>
+            <p className="text-white/60 max-w-2xl mx-auto">{d.featuresSubtitle}</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {features.map((feature, index) => (
+            {d.features.map((feature, index) => (
               <motion.div
                 key={feature.title}
                 initial={{ opacity: 0, y: 20 }}
@@ -182,15 +129,13 @@ export function DentalPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Trusted by Leading Clinics
+              {d.testimonialsTitle}
             </h2>
-            <p className="text-white/60 max-w-2xl mx-auto">
-              Real results from dental practices across the Baltics.
-            </p>
+            <p className="text-white/60 max-w-2xl mx-auto">{d.testimonialsSubtitle}</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
+            {d.testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.name}
                 initial={{ opacity: 0, y: 20 }}
@@ -200,11 +145,13 @@ export function DentalPage() {
                 className="glass-card p-8"
               >
                 <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
+                  {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
-                <p className="text-white/80 mb-6 leading-relaxed">"{testimonial.content}"</p>
+                <p className="text-white/80 mb-6 leading-relaxed">
+                  &ldquo;{testimonial.content}&rdquo;
+                </p>
                 <div>
                   <div className="font-semibold text-white">{testimonial.name}</div>
                   <div className="text-white/60 text-sm">{testimonial.role}</div>
@@ -225,22 +172,17 @@ export function DentalPage() {
             transition={{ duration: 0.5 }}
             className="glass-card p-8 md:p-12 text-center"
           >
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-              Ready to Transform Your Practice?
-            </h2>
-            <p className="text-white/60 mb-8 max-w-xl mx-auto">
-              Join 50+ dental clinics already using SensaraAI to reduce no-shows and automate
-              patient booking.
-            </p>
-            <Button to="#assessment" size="lg">
-              Get Your Free Assessment
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">{d.ctaBlockTitle}</h2>
+            <p className="text-white/60 mb-8 max-w-xl mx-auto">{d.ctaBlockSubtitle}</p>
+            <Button href="#assessment" size="lg">
+              {d.ctaBlockButton}
               <ArrowRight className="w-4 h-4" />
             </Button>
           </motion.div>
         </div>
       </section>
 
-      <Contact prefillIndustry="Dental" />
+      <Contact key={language} prefillIndustry={d.industryPrefill} />
     </main>
   );
 }

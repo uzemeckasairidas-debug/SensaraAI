@@ -10,6 +10,7 @@ interface ButtonProps {
   onClick?: () => void;
   className?: string;
   disabled?: boolean;
+  type?: 'button' | 'submit';
 }
 
 export function Button({
@@ -21,17 +22,16 @@ export function Button({
   onClick,
   className = '',
   disabled = false,
+  type = 'button',
 }: ButtonProps) {
   const baseStyles =
-    'inline-flex items-center justify-center font-medium transition-all duration-200 rounded-xl';
+    'inline-flex items-center justify-center gap-2 font-medium transition-all duration-200 rounded-xl';
 
   const variants = {
     primary:
       'bg-accent-500 text-white hover:bg-accent-600 glow-accent hover:shadow-[0_0_50px_rgba(0,102,255,0.5)] relative overflow-hidden group',
-    secondary:
-      'glass text-white hover:bg-white/10 hover:border-white/20',
-    ghost:
-      'text-white/70 hover:text-white hover:bg-white/5',
+    secondary: 'glass text-white hover:bg-white/10 hover:border-white/20',
+    ghost: 'text-white/70 hover:text-white hover:bg-white/5',
   };
 
   const sizes = {
@@ -40,9 +40,9 @@ export function Button({
     lg: 'px-8 py-4 text-lg',
   };
 
-  const classes = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
-
-  const MotionComponent = motion.button;
+  const classes = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className} ${
+    disabled ? 'opacity-50 cursor-not-allowed' : ''
+  }`;
 
   const content = (
     <>
@@ -52,6 +52,14 @@ export function Button({
       )}
     </>
   );
+
+  if (to?.startsWith('#') || to?.includes('#')) {
+    return (
+      <a href={to} className={classes}>
+        {content}
+      </a>
+    );
+  }
 
   if (to) {
     return (
@@ -70,14 +78,15 @@ export function Button({
   }
 
   return (
-    <MotionComponent
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
+    <motion.button
+      type={type}
+      whileHover={disabled ? undefined : { scale: 1.02 }}
+      whileTap={disabled ? undefined : { scale: 0.98 }}
       onClick={onClick}
       disabled={disabled}
       className={classes}
     >
       {content}
-    </MotionComponent>
+    </motion.button>
   );
 }
