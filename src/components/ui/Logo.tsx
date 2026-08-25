@@ -64,8 +64,8 @@ function LogoWordmark({ size }: { size: LogoSize }) {
     <span
       className={`font-semibold tracking-tight leading-none whitespace-nowrap ${textSizes[size]}`}
     >
-      <span className="text-white">Sensara</span>
-      <span className="text-accent-400">AI</span>
+      <span className="text-ink-900">Sensara</span>
+      <span className="text-accent-600">AI</span>
     </span>
   );
 }

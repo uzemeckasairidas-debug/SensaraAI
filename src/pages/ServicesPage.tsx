@@ -17,8 +17,8 @@ export function ServicesPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">{s.title}</h1>
-          <p className="text-lg text-white/60 max-w-2xl mx-auto">{s.subtitle}</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-ink-900 mb-6">{s.title}</h1>
+          <p className="text-lg text-ink-600 max-w-2xl mx-auto">{s.subtitle}</p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6 mb-4">
@@ -32,28 +32,28 @@ export function ServicesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="glass-card p-8 flex flex-col border border-white/10"
+                className="glass-card p-8 flex flex-col transition-shadow duration-300 hover:shadow-[0_16px_48px_rgba(24,24,27,0.1)]"
               >
                 <div
                   className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 ${
-                    accent ? 'bg-accent-500/20' : 'bg-white/10'
+                    accent ? 'bg-accent-500/15' : 'bg-black/5'
                   }`}
                 >
-                  <Icon className={`w-6 h-6 ${accent ? 'text-accent-400' : 'text-white'}`} />
+                  <Icon className={`w-6 h-6 ${accent ? 'text-accent-600' : 'text-ink-800'}`} />
                 </div>
-                <h2 className="text-xl font-bold text-white mb-3">{service.title}</h2>
-                <p className="text-white/60 text-sm leading-relaxed mb-6">{service.description}</p>
+                <h2 className="text-xl font-bold text-ink-900 mb-3">{service.title}</h2>
+                <p className="text-ink-600 text-sm leading-relaxed mb-6">{service.description}</p>
 
                 <ul className="space-y-2 mb-6">
                   {service.bullets.map((bullet) => (
-                    <li key={bullet} className="flex items-center gap-2 text-white/70 text-sm">
-                      <div className="w-1.5 h-1.5 rounded-full bg-accent-400 shrink-0" />
+                    <li key={bullet} className="flex items-center gap-2 text-ink-700 text-sm">
+                      <div className="w-1.5 h-1.5 rounded-full bg-accent-500 shrink-0" />
                       {bullet}
                     </li>
                   ))}
                 </ul>
 
-                <p className="text-accent-400 text-sm italic mt-auto">{service.outcome}</p>
+                <p className="text-accent-600 text-sm italic mt-auto">{service.outcome}</p>
               </motion.div>
             );
           })}

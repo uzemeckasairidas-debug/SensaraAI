@@ -45,7 +45,7 @@ export function Header() {
               <Link
                 key={link.key}
                 to={link.to}
-                className="text-white/70 hover:text-white transition-colors"
+                className="text-ink-600 hover:text-ink-900 transition-colors"
               >
                 {t.nav[link.key]}
               </Link>
@@ -62,7 +62,7 @@ export function Header() {
           <div className="flex md:hidden items-center gap-2">
             <LanguageToggle />
             <button
-              className="p-2 text-white"
+              className="p-2 text-ink-900"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -84,7 +84,7 @@ export function Header() {
                 <Link
                   key={link.key}
                   to={link.to}
-                  className="block text-white/70 hover:text-white"
+                  className="block text-ink-600 hover:text-ink-900"
                 >
                   {t.nav[link.key]}
                 </Link>

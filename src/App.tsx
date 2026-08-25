@@ -30,7 +30,8 @@ function App() {
     <LanguageProvider>
       <BrowserRouter>
         <ScrollToHash />
-        <div className="min-h-screen bg-dark-900">
+        <div className="min-h-screen bg-dark-900 relative">
+          <div className="pointer-events-none fixed inset-0 z-[1] noise-overlay opacity-[0.03]" aria-hidden />
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -42,13 +43,13 @@ function App() {
           <Footer />
         </div>
         <Toaster
-          theme="dark"
+          theme="light"
           position="top-center"
           toastOptions={{
             style: {
-              background: '#0f0f18',
-              border: '1px solid rgba(255,255,255,0.1)',
-              color: '#fff',
+              background: '#ffffff',
+              border: '1px solid rgba(24,24,27,0.08)',
+              color: '#18181b',
             },
           }}
         />

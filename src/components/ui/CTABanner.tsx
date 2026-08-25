@@ -20,8 +20,8 @@ export function CTABanner({ title, subtitle, buttonLabel, className = '' }: CTAB
           transition={{ duration: 0.5 }}
           className="glass-card p-8 md:p-12 text-center"
         >
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">{title}</h2>
-          {subtitle && <p className="text-white/60 mb-8 max-w-xl mx-auto">{subtitle}</p>}
+          <h2 className="text-2xl sm:text-3xl font-bold text-ink-900 mb-3">{title}</h2>
+          {subtitle && <p className="text-ink-600 mb-8 max-w-xl mx-auto">{subtitle}</p>}
           <Button to="/contact" size="lg">
             {buttonLabel}
             <ArrowRight className="w-4 h-4" />

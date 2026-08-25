@@ -6,8 +6,8 @@ interface BadgeProps {
 
 export function Badge({ children, variant = 'default', className = '' }: BadgeProps) {
   const variants = {
-    default: 'bg-white/10 text-white/70',
-    accent: 'bg-accent-500/20 text-accent-400 border border-accent-500/30',
+    default: 'bg-black/5 text-ink-600',
+    accent: 'bg-accent-500/10 text-accent-600 border border-accent-500/20',
   };
 
   return (

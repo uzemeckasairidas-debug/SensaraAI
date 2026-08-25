@@ -29,9 +29,9 @@ export function Button({
 
   const variants = {
     primary:
-      'bg-accent-500 text-white hover:bg-accent-600 glow-accent hover:shadow-[0_0_50px_rgba(0,102,255,0.5)] relative overflow-hidden group',
-    secondary: 'glass text-white hover:bg-white/10 hover:border-white/20',
-    ghost: 'text-white/70 hover:text-white hover:bg-white/5',
+      'bg-accent-500 text-white hover:bg-accent-600 glow-accent hover:shadow-[0_0_50px_rgba(0,102,255,0.35)] relative overflow-hidden group',
+    secondary: 'glass text-ink-900 hover:bg-black/5 hover:border-black/10',
+    ghost: 'text-ink-600 hover:text-ink-900 hover:bg-black/5',
   };
 
   const sizes = {

@@ -5,10 +5,20 @@ export default {
     extend: {
       colors: {
         dark: {
-          900: '#0a0a0f',
-          800: '#0f0f18',
-          700: '#151520',
-          600: '#1a1a28',
+          900: '#faf9f7',
+          800: '#f4f2ee',
+          700: '#ece9e3',
+          600: '#e0dcd3',
+        },
+        ink: {
+          900: '#18181b',
+          800: '#27272a',
+          700: '#3f3f46',
+          600: '#52525b',
+          500: '#71717a',
+          400: '#a1a1aa',
+          300: '#d4d4d8',
+          200: '#e4e4e7',
         },
         accent: {
           400: '#3385ff',
@@ -25,6 +35,8 @@ export default {
       animation: {
         'glow': 'glow 2s ease-in-out infinite alternate',
         'shimmer': 'shimmer 2.5s infinite linear',
+        'float': 'float 9s ease-in-out infinite',
+        'float-delayed': 'float 11s ease-in-out infinite 1.5s',
       },
       keyframes: {
         glow: {
@@ -34,6 +46,10 @@ export default {
         shimmer: {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+          '50%': { transform: 'translate(2%, -4%) scale(1.06)' },
         },
       },
     },

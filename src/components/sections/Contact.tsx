@@ -110,11 +110,11 @@ export function Contact({ prefillIndustry }: ContactProps) {
             animate={{ opacity: 1, scale: 1 }}
             className="glass-card p-12 text-center"
           >
-            <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6">
-              <Check className="w-10 h-10 text-green-400" />
+            <div className="w-20 h-20 rounded-full bg-green-500/15 flex items-center justify-center mx-auto mb-6">
+              <Check className="w-10 h-10 text-green-600" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-3">{c.successTitle}</h3>
-            <p className="text-white/60 mb-6">{c.successMessage}</p>
+            <h3 className="text-2xl font-bold text-ink-900 mb-3">{c.successTitle}</h3>
+            <p className="text-ink-600 mb-6">{c.successMessage}</p>
             <Button to="/" variant="secondary">
               {c.returnHome}
             </Button>
@@ -134,13 +134,13 @@ export function Contact({ prefillIndustry }: ContactProps) {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">{c.title}</h2>
-          <p className="text-white/60">{c.subtitle}</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-ink-900 mb-4">{c.title}</h2>
+          <p className="text-ink-600">{c.subtitle}</p>
         </motion.div>
 
         <div className="glass-card p-8">
           <div className="mb-8">
-            <div className="h-1 bg-white/10 rounded-full overflow-hidden">
+            <div className="h-1 bg-black/10 rounded-full overflow-hidden">
               <motion.div
                 className="h-full bg-accent-500"
                 initial={{ width: 0 }}
@@ -148,7 +148,7 @@ export function Contact({ prefillIndustry }: ContactProps) {
                 transition={{ duration: 0.3 }}
               />
             </div>
-            <div className="flex justify-between mt-2 text-xs text-white/40">
+            <div className="flex justify-between mt-2 text-xs text-ink-400">
               <span>
                 {c.stepOf} {currentStep + 1} {c.of} {steps.length}
               </span>
@@ -166,14 +166,14 @@ export function Contact({ prefillIndustry }: ContactProps) {
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <h3 className="text-xl font-semibold text-white mb-2">{step.title}</h3>
-              <p className="text-white/60 mb-6">{step.subtitle}</p>
+              <h3 className="text-xl font-semibold text-ink-900 mb-2">{step.title}</h3>
+              <p className="text-ink-600 mb-6">{step.subtitle}</p>
 
               {meta.fields && 'fields' in step && (
                 <div className="space-y-4">
                   {step.fields.map((field, i) => (
                     <div key={meta.fields![i].name}>
-                      <label className="block text-sm font-medium text-white/80 mb-2">
+                      <label className="block text-sm font-medium text-ink-800 mb-2">
                         {field.label}
                       </label>
                       <input
@@ -181,7 +181,7 @@ export function Contact({ prefillIndustry }: ContactProps) {
                         placeholder={field.placeholder}
                         value={formData[meta.fields![i].name as keyof FormData]}
                         onChange={(e) => handleInputChange(meta.fields![i].name, e.target.value)}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors"
+                        className="w-full px-4 py-3 bg-black/[0.03] border border-black/10 rounded-xl text-ink-900 placeholder-ink-400 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors"
                       />
                     </div>
                   ))}
@@ -197,8 +197,8 @@ export function Contact({ prefillIndustry }: ContactProps) {
                       onClick={() => handleInputChange(meta.field!.name, option)}
                       className={`px-4 py-3 rounded-xl text-left transition-all ${
                         formData[meta.field!.name as keyof FormData] === option
-                          ? 'bg-accent-500/20 border-accent-500 text-white'
-                          : 'bg-white/5 border-white/10 text-white/70 hover:bg-white/10'
+                          ? 'bg-accent-500/10 border-accent-500 text-ink-900'
+                          : 'bg-black/[0.03] border-black/10 text-ink-700 hover:bg-black/[0.06]'
                       } border`}
                     >
                       {option}
@@ -214,10 +214,10 @@ export function Contact({ prefillIndustry }: ContactProps) {
                     placeholder={step.placeholder}
                     value={formData[meta.field!.name as keyof FormData]}
                     onChange={(e) => handleInputChange(meta.field!.name, e.target.value)}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors"
+                    className="w-full px-4 py-3 bg-black/[0.03] border border-black/10 rounded-xl text-ink-900 placeholder-ink-400 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors"
                   />
                   {meta.field.optional && (
-                    <p className="text-xs text-white/40 mt-2">{c.optionalField}</p>
+                    <p className="text-xs text-ink-400 mt-2">{c.optionalField}</p>
                   )}
                 </div>
               )}
@@ -229,7 +229,7 @@ export function Contact({ prefillIndustry }: ContactProps) {
               type="button"
               onClick={handleBack}
               disabled={currentStep === 0}
-              className={`flex items-center gap-2 text-white/60 hover:text-white transition-colors ${
+              className={`flex items-center gap-2 text-ink-600 hover:text-ink-900 transition-colors ${
                 currentStep === 0 ? 'opacity-50 cursor-not-allowed' : ''
               }`}
             >

@@ -7,7 +7,7 @@ export function LanguageToggle({ className = '' }: { className?: string }) {
     <button
       type="button"
       onClick={toggleLanguage}
-      className={`px-3 py-1.5 text-xs font-medium rounded-full border border-white/15 bg-white/5 text-white/70 hover:text-white hover:bg-white/10 hover:border-white/25 transition-colors ${className}`}
+      className={`px-3 py-1.5 text-xs font-medium rounded-full border border-black/10 bg-black/[0.03] text-ink-600 hover:text-ink-900 hover:bg-black/[0.06] hover:border-black/20 transition-colors ${className}`}
       aria-label={language === 'lt' ? 'Switch to English' : 'Perjungti į lietuvių'}
     >
       {language === 'lt' ? 'EN' : 'LT'}
