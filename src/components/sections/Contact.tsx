@@ -13,7 +13,6 @@ const stepMeta = [
     ],
   },
   { id: 'industry', field: { name: 'industry', type: 'select' as const } },
-  { id: 'size', field: { name: 'companySize', type: 'select' as const } },
   { id: 'pain', field: { name: 'painPoint', type: 'select' as const } },
   { id: 'tools', field: { name: 'currentTools', type: 'text' as const, optional: true } },
 ];
@@ -22,7 +21,6 @@ interface FormData {
   name: string;
   email: string;
   industry: string;
-  companySize: string;
   painPoint: string;
   currentTools: string;
 }
@@ -41,7 +39,6 @@ export function Contact({ prefillIndustry }: ContactProps) {
     name: '',
     email: '',
     industry: prefillIndustry || '',
-    companySize: '',
     painPoint: '',
     currentTools: '',
   });
@@ -80,9 +77,24 @@ export function Contact({ prefillIndustry }: ContactProps) {
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsComplete(true);
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.industry,
+          need: formData.painPoint,
+          message: formData.currentTools ? `Current tools: ${formData.currentTools}` : undefined,
+        }),
+      });
+    } catch (err) {
+      console.error('Discovery call form submit failed:', err);
+    } finally {
+      setIsSubmitting(false);
+      setIsComplete(true);
+    }
   };
 
   const progress = ((currentStep + 1) / steps.length) * 100;

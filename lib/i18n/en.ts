@@ -1,389 +1,230 @@
 export const en = {
   nav: {
-    solutions: 'Solutions',
+    services: 'Services',
+    process: 'How It Works',
     about: 'About',
-    dentalMedical: 'Dental & Medical',
-    customAutomation: 'Custom Automation',
-    process: 'Process',
     caseStudies: 'Case Studies',
-    bookDemo: 'Book a Demo',
+    bookCall: 'Book a Free Call',
   },
   hero: {
-    badge: 'AI-Powered Growth Automation',
-    titleLine1: 'Intelligent Systems for',
-    titleLine2: 'High-Growth Enterprises',
+    badge: 'Marketing + AI Automation',
+    titleLine1: 'Feel like your business',
+    titleLine2: 'could be growing faster?',
     subtitle:
-      'We deploy specialized AI agents that automate patient acquisition, lead management, and complex workflows. Built for precision. Scaleable by design.',
-    viewSolutions: 'View Solutions',
-    bookDemo: 'Book a Demo',
-    trusted: 'Trusted by 50+ enterprises',
-    gdpr: 'GDPR Compliant',
-    coverage: '24/7 AI Coverage',
+      "Usually it's not just your marketing, or just your processes — it's that nothing connects them. I look at your situation and recommend exactly what fits: marketing, AI automation, or both.",
+    primaryCta: 'Book a Free Discovery Call',
+    secondaryCta: 'See What I Do',
+    trust: ['Based in Vilnius', 'Assessment before any pitch', "Direct — you talk to me, not a sales team"],
   },
-  twoPaths: {
-    title: 'Two Paths to AI Transformation',
+  whatIDo: {
+    eyebrow: 'What I do',
+    title: 'One person, both skill sets, no guesswork',
     subtitle:
-      'Whether you need industry-specific precision or custom enterprise automation, we have the solution.',
-    industryTitle: 'Industry Specific',
-    industryDesc:
-      'High-precision AI agents built for Medical and Dental clinics. Automate patient booking, reduce no-shows, and provide 24/7 coverage with native-language support.',
-    industryFeatures: [
-      '24/7 AI-powered booking agents',
-      'Native Lithuanian language support',
-      'HIPAA & GDPR compliant',
-      '42% average no-show reduction',
+      "Most local businesses end up hiring a marketing agency and a separate automation freelancer — and neither one sees the full picture. I do both, and only recommend what your business actually needs.",
+    forWhoTitle: 'Who this is for',
+    forWhoItems: [
+      'Med spas and clinics that want a fuller calendar without a bigger front desk',
+      'Local service businesses losing leads to slow follow-up',
+      "Owners who've tried ads or a \"just automate it\" tool and still feel stuck",
     ],
-    industryCta: 'Explore Dental Solutions',
-    customTitle: 'Custom Automation',
-    customDesc:
-      'Enterprise-grade workflow AI tailored to your unique business processes. From lead routing to complex multi-system integrations.',
-    customFeatures: [
-      'Custom AI agent development',
-      'CRM & tool integrations',
-      'Workflow automation pipelines',
-      'Scalable infrastructure',
-    ],
-    customCta: 'Request Custom Solution',
-  },
-  process: {
-    eyebrow: 'Our Approach',
-    title: 'Four-Step Transformation',
-    subtitle:
-      'A proven methodology to integrate AI seamlessly into your enterprise, driving efficiency from day one.',
-    steps: [
-      {
-        title: 'Analysis (Audit)',
-        description:
-          'Identifying bottlenecks in registrations, manual data entry, and uncovering opportunities for intelligent automation.',
-      },
-      {
-        title: 'Customization (Training)',
-        description:
-          'Training custom AI models on your business data (fully localized for the Lithuanian context and market specifics).',
-      },
-      {
-        title: 'Integration (API/Web)',
-        description:
-          'Deploying intelligent agents directly into your CRM, existing website, and operational workflows with zero downtime.',
-      },
-      {
-        title: 'Scaling (24/7 Support)',
-        description:
-          '24/7 continuous optimization, performance monitoring, and real-time reporting to ensure maximum ROI.',
-      },
-    ],
+    howTitle: 'How I decide what you need',
+    howText:
+      "Every engagement starts with a short audit of your marketing, your booking process, and where leads actually fall through. From that, I recommend one path — never a bundle by default.",
   },
   services: {
-    title: 'Core AI Services',
-    subtitle: 'Purpose-built AI solutions designed to eliminate bottlenecks and accelerate growth.',
+    eyebrow: 'Services',
+    title: 'Two capabilities. One decision, made together.',
+    subtitle: 'Which one (or both) fits your business comes out of the audit — not a fixed package.',
     items: [
       {
-        title: 'Agentic Booking',
+        title: 'Marketing that brings in customers',
         description:
-          '24/7 AI voice and chat agents that handle patient registrations, appointment scheduling, and follow-ups. Never miss a booking opportunity.',
-        features: ['Voice & Chat AI', 'Multi-language', 'Calendar Sync'],
+          'Google Ads, Meta Ads, local SEO, and social media — run to fill your calendar, not your vanity metrics.',
+        features: ['Google Ads', 'Meta Ads', 'Local SEO', 'Social Media'],
+        outcome: 'More of the right people finding you.',
       },
       {
-        title: 'Workflow Autopilot',
+        title: 'Automation that stops the leaks',
         description:
-          'Eliminate manual data entry between your CRM, email marketing, and internal tools. Seamless automation that scales with your business.',
-        features: ['CRM Integration', 'Email Automation', 'Data Sync'],
+          'Instant lead follow-up, online booking, and review requests — so no inquiry sits unanswered.',
+        features: ['Lead Follow-Up', 'Online Booking', 'Review Requests', 'Workflow Automation'],
+        outcome: 'No customer falls through the cracks.',
       },
       {
-        title: 'Answer Engines',
+        title: 'Full growth partnership',
         description:
-          'Custom-trained AI knowledge bases for internal teams or customer-facing support. Instant answers from your documentation.',
-        features: ['Custom Training', 'Internal/External', 'Real-time Updates'],
+          'When the audit shows you need both, I run marketing and automation together as one system — not two vendors.',
+        features: ['Combined Strategy', 'One Point of Contact', 'Monthly Reporting'],
+        outcome: 'Marketing and follow-up finally working as one.',
       },
     ],
   },
-  results: {
-    eyebrow: 'Proven Impact',
-    title: 'Real Results, Delivered',
-    subtitle: 'See how SensaraAI transforms operations across different industries.',
-    cards: [
+  process: {
+    eyebrow: 'How It Works',
+    title: 'Four steps, no guesswork',
+    subtitle: 'A clear path from "not sure what\'s wrong" to a system that runs itself.',
+    steps: [
       {
-        vertical: 'Medical Vertical',
-        title: 'Vilnius Dental Clinic',
-        metric: '34%',
-        metricLabel: 'Increase in patient registrations',
+        title: 'Audit',
         description:
-          'Implemented an AI booking agent that handles inquiries 24/7, reducing front-desk overload and capturing after-hours appointments.',
+          "I look at your marketing, your booking process, and your leads to find exactly where you're losing customers.",
       },
       {
-        vertical: 'Enterprise Vertical',
-        title: 'Baltic Logistics Firm',
-        metric: '80%',
-        metricLabel: 'Automated support inquiries',
+        title: 'Recommendation',
         description:
-          'Custom LLM trained on internal knowledge base, dramatically reducing response times and operational costs.',
+          'You get a plain-language plan — marketing, automation, or both — with no pressure to buy more than you need.',
       },
       {
-        vertical: 'SME Vertical',
-        title: 'Professional Services',
-        metric: '€12k',
-        metricLabel: 'Recovered monthly revenue',
+        title: 'Build',
         description:
-          'AI-driven follow-ups and automated reminders eliminated missed appointments and streamlined client onboarding.',
+          'I set everything up myself — campaigns, booking systems, automations — directly in your existing tools.',
+      },
+      {
+        title: 'Improve',
+        description:
+          "I monitor results monthly and adjust, so the system keeps working as your business changes.",
       },
     ],
   },
-  compliance: {
-    title: 'Compliance & Security',
-    subtitle: 'Built for regulated industries. Your data security and compliance are our top priority.',
+  proof: {
+    eyebrow: 'Results',
+    title: 'Case studies are coming',
+    subtitle: "I'm early — real client results will go here as they come in. Want to be the first?",
+    verticals: ['Med Spa', 'Clinic', 'Local Service Business'],
+    comingSoon: 'Coming soon',
+  },
+  trust: {
+    title: 'Why local businesses work with me',
+    subtitle: 'No account managers, no long contracts, no jargon.',
     items: [
       {
-        title: 'GDPR Compliant',
-        description:
-          'Full compliance with European data protection regulations. Your data is handled with the highest security standards.',
+        title: 'You talk to me — directly',
+        description: 'No account managers, no hand-offs. I plan, build, and maintain everything myself.',
       },
       {
-        title: 'Lithuanian-Language Native AI',
-        description:
-          'Our AI agents are natively trained for Lithuanian language, ensuring natural conversations and cultural context.',
+        title: 'Assessment before any pitch',
+        description: "I recommend what fits your business, not what's easiest for me to sell.",
       },
       {
-        title: 'Enterprise Security',
-        description:
-          'Bank-grade encryption, secure data centers, and strict access controls protect your sensitive information.',
+        title: 'Built for Lithuania',
+        description: 'Local language, local search behavior, local context — not a generic playbook.',
       },
     ],
-    banner: 'Trusted by healthcare providers and enterprises across the Baltics',
-    stats: ['50+ Clinics', '100K+ Appointments Automated', '99.9% Uptime'],
+    banner: 'Currently taking on a limited number of new clients each month.',
   },
   cta: {
-    title: 'Get Your Free AI Assessment',
-    subtitle: 'Answer a few questions and we will provide a tailored AI strategy for your business.',
+    title: 'Book a Free Discovery Call',
+    subtitle: "Answer a few questions so I can prepare before we talk — takes about a minute.",
     stepOf: 'Step',
     of: 'of',
     complete: 'complete',
     back: 'Back',
     continue: 'Continue',
-    submit: 'Submit Assessment',
-    processing: 'Processing...',
-    successTitle: 'Assessment Submitted',
-    successMessage:
-      'We will analyze your needs and get back to you within 24 hours with a personalized AI strategy.',
-    returnHome: 'Return Home',
-    optionalField: 'Optional field',
+    submit: 'Submit',
+    processing: 'Sending...',
+    successTitle: 'Got it — thank you.',
+    successMessage: "I'll review your answers and reach out within 24 hours to schedule the call.",
+    returnHome: 'Back to Home',
+    optionalField: 'Optional',
     steps: [
       {
-        title: 'What should we call you?',
-        subtitle: 'Let us know your name',
+        title: 'What should I call you?',
+        subtitle: 'Just your name and email',
         fields: [
           { label: 'Full Name', placeholder: 'John Smith' },
-          { label: 'Email Address', placeholder: 'john@company.com' },
+          { label: 'Email Address', placeholder: 'john@business.com' },
         ],
       },
       {
-        title: 'What industry are you in?',
-        subtitle: 'This helps us tailor our AI solutions',
-        options: ['Medical', 'Dental', 'SaaS', 'E-commerce', 'Professional Services', 'Other'],
+        title: 'What kind of business do you run?',
+        subtitle: 'Helps me prepare relevant examples',
+        options: ['Med Spa', 'Clinic', 'Local Service Business', 'Other'],
       },
       {
-        title: 'How large is your team?',
-        subtitle: 'We scale solutions for any size',
-        options: ['1-10 employees', '11-50 employees', '51-200 employees', '200+ employees'],
+        title: "What's the bigger problem right now?",
+        subtitle: 'Pick the closest one',
+        options: ['Not enough new customers', 'Too much manual admin work', 'Both, honestly', 'Not sure yet'],
       },
       {
-        title: 'What is your main challenge?',
-        subtitle: 'Select your primary pain point',
-        options: [
-          'Patient/Lead Booking',
-          'Manual Data Entry',
-          'Customer Support Overload',
-          'No-shows & Cancellations',
-          'Other',
-        ],
-      },
-      {
-        title: 'Any current tools?',
-        subtitle: 'Optional - helps us understand your stack',
-        placeholder: 'e.g., Salesforce, HubSpot, Calendly...',
+        title: "Any tools you're already using?",
+        subtitle: 'Optional — helps me understand your setup',
+        placeholder: 'e.g. Google Calendar, Instagram, a booking app...',
       },
     ],
   },
   footer: {
     tagline:
-      'Intelligent AI systems for high-growth enterprises. Automate patient acquisition, lead management, and complex workflows.',
+      'Marketing and AI automation for local businesses — decided by what you actually need, not a fixed package.',
     links: 'Links',
-    solutions: 'Solutions',
+    services: 'Services',
     about: 'About',
     caseStudies: 'Case Studies',
-    dentalMedical: 'Dental & Medical',
-    customAutomation: 'Custom Automation',
-    ourProcess: 'Our Process',
+    process: 'How It Works',
     contact: 'Contact',
     email: 'info@sensaraai.com',
+    phone: '+370 624 35779',
     location: 'Vilnius, Lithuania',
-    copyright: '© 2025 SensaraAI. All rights reserved.',
+    copyright: 'SensaraAI. All rights reserved.',
     privacy: 'Privacy Policy',
     terms: 'Terms of Service',
   },
   about: {
     heroTitle: "Hi. I'm Airidas.",
     heroSubtitle:
-      'I build AI systems that help Lithuanian businesses work faster and smarter — without unnecessary complexity.',
+      'I help local Lithuanian businesses grow — through marketing, AI automation, or both, depending on what actually moves the needle.',
     backgroundTitle: 'My background',
     background:
-      'Solo founder, based in Vilnius. I build AI automation systems for clinics and service businesses. Currently working with dental clinics across Lithuania.',
+      "Solo founder, based in Vilnius. I work with med spas, clinics, and local service businesses across Lithuania — running their marketing, building their automation, or both, based on what each business needs.",
     whyTitle: 'Why I started SensaraAI',
-    why: 'Lithuanian businesses are behind on automation. Most tools are built for Western markets and do not fit local workflows, language, or scale. I fix that.',
+    why: "Local businesses usually get one or the other: a marketing agency that doesn't touch your booking process, or an automation freelancer who doesn't touch your ads. I built SensaraAI to close that gap — one person who sees the whole picture.",
     howTitle: 'How I work',
-    how: 'Direct. No account managers. You talk to me. I scope, build, and maintain everything myself — or with a small trusted network.',
-    techTitle: 'Tech I use',
-    tech: ['N8N', 'Supabase', 'Next.js', 'OpenAI', 'Resend', 'Vercel'],
+    how: 'Direct. No account managers. You talk to me. I audit, plan, build, and maintain everything myself — or with a small trusted network.',
+    techTitle: 'Tools I work with',
+    tech: ['Google Ads', 'Meta Ads', 'N8N', 'Supabase', 'OpenAI', 'Vercel'],
     photoAlt: 'Airidas — founder of SensaraAI',
     photoPlaceholder: 'Photo coming soon',
     cta: "Let's Talk",
   },
   servicesPage: {
     title: 'Services',
-    subtitle: 'Everything I build — focused on outcomes, not buzzwords.',
-    ctaTitle: 'Not sure which service fits?',
-    ctaSubtitle: "Let's talk.",
-    ctaButton: "Let's talk",
+    subtitle: "Two capabilities under one roof. What you get depends on your audit, not a fixed package.",
+    ctaTitle: 'Not sure which one fits?',
+    ctaSubtitle: "That's exactly what the discovery call is for.",
+    ctaButton: 'Book a Free Call',
     items: [
       {
-        title: 'Patient & Client Booking System',
+        title: 'Marketing',
         description:
-          'Automated booking with instant confirmation, reminders, and cancellation handling. Integrates with your existing calendar.',
-        outcome: 'No more phone tag. Clients book themselves.',
+          'Google Ads, Meta Ads, local SEO, and social media content — run to bring in customers who are actually ready to book, not just clicks.',
+        bullets: ['Google Ads', 'Meta Ads (Facebook & Instagram)', 'Local SEO', 'Social media content'],
+        outcome: 'More of the right people finding you.',
       },
       {
-        title: 'CRM System with Dashboard',
+        title: 'AI Automation',
         description:
-          'Full client management system — track leads, history, notes, and communications in one place.',
-        outcome: 'You always know who needs follow-up.',
+          'Instant lead follow-up, online booking systems, review requests, and workflow automation between the tools you already use.',
+        bullets: ['Instant lead follow-up', 'Online booking systems', 'Automated review requests', 'Workflow automation (N8N)'],
+        outcome: 'No customer falls through the cracks.',
       },
       {
-        title: 'Website Rebuild',
+        title: 'Full Growth Partnership',
         description:
-          'Fast, modern website built on Next.js. Optimized for Lithuanian SEO, mobile-first, and easy to update.',
-        outcome: 'A site that actually converts visitors.',
-      },
-      {
-        title: 'AI Chatbot',
-        description:
-          'Custom chatbot trained on your business — answers questions, qualifies leads, and books appointments 24/7.',
-        outcome: 'Your business never sleeps.',
-      },
-      {
-        title: 'N8N Automations',
-        description:
-          'Connect your tools and automate repetitive tasks — from email sequences to CRM updates and invoice generation.',
-        outcome: 'Hours saved every week, automatically.',
-      },
-      {
-        title: 'Monthly Maintenance Retainer',
-        description: 'I monitor, update, and improve your systems every month. You focus on your business.',
-        outcome: 'Set it, and I handle the rest.',
+          "When the audit shows both marketing and automation are holding you back, I run them together as one connected system, with one point of contact.",
+        bullets: ['Combined marketing + automation strategy', 'One point of contact', 'Monthly reporting & adjustments'],
+        outcome: 'Marketing and follow-up finally working as one.',
       },
     ],
   },
   caseStudiesPage: {
     title: 'Case Studies',
-    subtitle: 'Real results from real businesses. More coming soon.',
+    subtitle: "I'm early — real results from real local businesses will go here as they come in.",
     comingSoon: 'Coming Soon',
     placeholderText: 'Full case study details are on the way.',
     cards: [
-      { vertical: 'Medical', title: 'Vision Dental Clinic', metric: '34%' },
-      { vertical: 'Enterprise', title: 'Ratio Logistics', metric: '80%' },
-      { vertical: 'SME', title: 'Professional Services', metric: '€12k' },
+      { vertical: 'Med Spa', title: 'Full case study coming soon' },
+      { vertical: 'Clinic', title: 'Full case study coming soon' },
+      { vertical: 'Local Service Business', title: 'Full case study coming soon' },
     ],
-  },
-  contactPage: {
-    title: "Let's Talk",
-    subtitle:
-      "Fill in the form and I'll get back to you within 24 hours. Or email me directly: info@sensaraai.com",
-    fullName: 'Full Name',
-    email: 'Email',
-    company: 'Company / Clinic name',
-    need: 'What do you need help with?',
-    message: 'Message',
-    send: 'Send',
-    sending: 'Sending...',
-    success: 'Message sent! I will get back to you within 24 hours.',
-    error: 'Something went wrong. Please try again or email me directly.',
-    needs: [
-      'Booking System',
-      'CRM',
-      'Website',
-      'Chatbot',
-      'N8N Automations',
-      'Maintenance',
-      'Not sure yet',
-    ],
-  },
-  dentalPage: {
-    badge: 'Dental & Medical Solutions',
-    titleLine1: 'Fill Every Chair.',
-    titleLine2: 'Never Miss a Call.',
-    subtitle:
-      'AI-powered booking agents that work 24/7, speak Lithuanian natively, and reduce no-shows by up to 42%. Built specifically for dental and medical clinics.',
-    ctaPrimary: 'Get Free Assessment',
-    ctaSecondary: 'See ROI Stats',
-    stats: [
-      { value: '42%', label: 'Reduction in No-shows' },
-      { value: '24/7', label: 'Booking Coverage' },
-      { value: '3x', label: 'Faster Response Time' },
-      { value: '89%', label: 'Patient Satisfaction' },
-    ],
-    featuresTitle: 'Built for Dental Practices',
-    featuresSubtitle:
-      'Every feature designed to solve the unique challenges of dental clinic management.',
-    features: [
-      {
-        title: 'AI-Powered Scheduling',
-        description:
-          'Intelligent booking agents that understand patient preferences, insurance requirements, and appointment types.',
-      },
-      {
-        title: 'Automated Reminders',
-        description:
-          'Multi-channel reminders via SMS, email, and voice calls that reduce no-shows by up to 42%.',
-      },
-      {
-        title: 'Native Lithuanian Support',
-        description:
-          'AI agents trained for natural Lithuanian conversations, understanding local context and expressions.',
-      },
-      {
-        title: 'Seamless Integration',
-        description:
-          'Works with your existing practice management software. No technical changes required on your end.',
-      },
-    ],
-    testimonialsTitle: 'Trusted by Leading Clinics',
-    testimonialsSubtitle: 'Real results from dental practices across the Baltics.',
-    testimonials: [
-      {
-        name: 'Dr. Aiste Petronyte',
-        role: 'Dental Clinic Director',
-        clinic: 'Vilnius Smile Center',
-        content:
-          'We went from 15% no-show rate to under 6% in just two months. The AI handles after-hours booking perfectly.',
-      },
-      {
-        name: 'Dr. Mindaugas Zukauskas',
-        role: 'Practice Owner',
-        clinic: 'Kaunas Dental Arts',
-        content:
-          'Patients often do not realize they are talking to AI. The Lithuanian language support is exceptional.',
-      },
-      {
-        name: 'Dr. Egle Kazlauskaite',
-        role: 'Orthodontist',
-        clinic: 'Smile Studio',
-        content:
-          'Our front desk staff can now focus on in-person patients while AI handles all phone bookings.',
-      },
-    ],
-    ctaBlockTitle: 'Ready to Transform Your Practice?',
-    ctaBlockSubtitle:
-      'Join 50+ dental clinics already using SensaraAI to reduce no-shows and automate patient booking.',
-    ctaBlockButton: 'Get Your Free Assessment',
-    industryPrefill: 'Dental',
   },
 } as const;
 

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 import { useLanguage } from '../../../lib/i18n/LanguageContext';
 import { LanguageToggle } from '../i18n/LanguageToggle';
 import { Logo } from '../ui/Logo';
@@ -9,7 +9,8 @@ export function Footer() {
   const f = t.footer;
 
   const footerLinks = [
-    { label: f.solutions, to: '/services' },
+    { label: f.services, to: '/services' },
+    { label: f.process, to: '/#process' },
     { label: f.about, to: '/about' },
     { label: f.caseStudies, to: '/case-studies' },
     { label: f.contact, to: '/contact' },
@@ -54,6 +55,15 @@ export function Footer() {
                   {f.email}
                 </a>
               </li>
+              <li>
+                <a
+                  href={`tel:${f.phone.replace(/\s+/g, '')}`}
+                  className="flex items-center gap-2 text-white/60 hover:text-white transition-colors"
+                >
+                  <Phone className="w-4 h-4 shrink-0" />
+                  {f.phone}
+                </a>
+              </li>
               <li className="flex items-center gap-2 text-white/60">
                 <MapPin className="w-4 h-4 shrink-0" />
                 {f.location}
@@ -64,7 +74,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-white/40 text-sm">
-            {new Date().getFullYear()} {f.copyright}
+            &copy; {new Date().getFullYear()} {f.copyright}
           </p>
           <div className="flex items-center gap-6">
             <LanguageToggle />

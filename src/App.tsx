@@ -9,7 +9,6 @@ import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
 import { ContactPage } from './pages/ContactPage';
 import { CaseStudiesPage } from './pages/CaseStudiesPage';
-import { DentalPage } from './pages/DentalPage';
 
 function ScrollToHash() {
   const { pathname, hash } = useLocation();
@@ -39,8 +38,6 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/case-studies" element={<CaseStudiesPage />} />
-            <Route path="/solutions/dental" element={<DentalPage />} />
-            <Route path="/book-demo" element={<ContactPage />} />
           </Routes>
           <Footer />
         </div>

@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import { Shield, Globe, Lock } from 'lucide-react';
+import { MessageCircle, ClipboardCheck, MapPin } from 'lucide-react';
 import { useLanguage } from '../../../lib/i18n/LanguageContext';
 
-const trustIcons = [Shield, Globe, Lock];
+const trustIcons = [MessageCircle, ClipboardCheck, MapPin];
 
 export function Trust() {
   const { t } = useLanguage();
-  const tr = t.compliance;
+  const tr = t.trust;
 
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-dark-800/50">
@@ -51,15 +51,7 @@ export function Trust() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-16 glass-card p-8 text-center"
         >
-          <p className="text-white/80 text-lg mb-4">{tr.banner}</p>
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-white/40 text-sm">
-            {tr.stats.map((stat, i) => (
-              <span key={stat} className="flex items-center gap-4">
-                {i > 0 && <span className="hidden sm:block w-1 h-1 rounded-full bg-white/40" />}
-                {stat}
-              </span>
-            ))}
-          </div>
+          <p className="text-white/80">{tr.banner}</p>
         </motion.div>
       </div>
     </section>

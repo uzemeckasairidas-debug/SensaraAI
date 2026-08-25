@@ -89,7 +89,7 @@ export function AboutPage() {
         </div>
 
         <div className="text-center">
-          <Button href="/#assessment" size="lg">
+          <Button to="/contact" size="lg">
             {a.cta}
           </Button>
         </div>

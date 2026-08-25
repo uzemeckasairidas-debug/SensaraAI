@@ -2,161 +2,120 @@ import type { Translation } from './en';
 
 export const lt: Translation = {
   nav: {
-    solutions: 'Sprendimai',
+    services: 'Paslaugos',
+    process: 'Kaip tai vyksta',
     about: 'Apie',
-    dentalMedical: 'Odontologija ir medicina',
-    customAutomation: 'Individualus automatizavimas',
-    process: 'Procesas',
     caseStudies: 'Sėkmės istorijos',
-    bookDemo: 'Užsisakyti demonstraciją',
+    bookCall: 'Nemokamas pokalbis',
   },
   hero: {
-    badge: 'DI pagrįstas augimo automatizavimas',
-    titleLine1: 'Išmaniosios sistemos',
-    titleLine2: 'augantiems verslams',
+    badge: 'Rinkodara + DI automatizavimas',
+    titleLine1: 'Jaučiate, kad verslas',
+    titleLine2: 'galėtų augti greičiau?',
     subtitle:
-      'Diegiame specializuotus DI agentus, kurie automatizuoja pacientų pritraukimą, leadų valdymą ir sudėtingus procesus. Sukurta tikslumui. Skalė pagal poreikį.',
-    viewSolutions: 'Peržiūrėti sprendimus',
-    bookDemo: 'Užsisakyti demonstraciją',
-    trusted: 'Pasitiki 50+ įmonių',
-    gdpr: 'BDAR atitinkantis',
-    coverage: '24/7 DI aprėptis',
+      'Dažniausiai priežastis nėra vien rinkodara ar vien procesai — o tai, kad niekas jų nesujungia. Įvertinu jūsų situaciją ir pasiūlau tikslų sprendimą: rinkodarą, DI automatizaciją, arba abu.',
+    primaryCta: 'Užsisakyti nemokamą pokalbį',
+    secondaryCta: 'Ką aš darau',
+    trust: ['Bazė Vilniuje', 'Pirmiau įvertinimas, tada pasiūlymas', 'Tiesiogiai su manimi, ne su pardavimų komanda'],
   },
-  twoPaths: {
-    title: 'Du keliai į DI transformaciją',
+  whatIDo: {
+    eyebrow: 'Ką aš darau',
+    title: 'Vienas žmogus, abi kompetencijos, be spėliojimų',
     subtitle:
-      'Nesvarbu, ar reikia pramonės sprendimo, ar individualaus automatizavimo — turime tinkamą variantą.',
-    industryTitle: 'Pramonės sprendimai',
-    industryDesc:
-      'Tikslūs DI agentai medicinos ir odontologijos klinikoms. Automatizuokite pacientų registraciją, sumažinkite neatvykimus ir užtikrinkite 24/7 aptarnavimą gimtąja kalba.',
-    industryFeatures: [
-      '24/7 DI rezervacijos agentai',
-      'Gimtoji lietuvių kalba',
-      'BDAR atitiktis',
-      'Vidutiniškai 42% mažiau neatvykimų',
+      'Dauguma vietinių verslų samdo rinkodaros agentūrą ir atskirą automatizavimo specialistą — o nė vienas nemato pilno vaizdo. Aš darau abu ir rekomenduoju tik tai, ko jūsų verslui iš tikrųjų reikia.',
+    forWhoTitle: 'Kam tai skirta',
+    forWhoItems: [
+      'Grožio klinikoms ir kabinetams, norintiems pilnesnio grafiko be didesnės registratūros',
+      'Vietiniams paslaugų verslams, prarandantiems klientus dėl lėto atsakymo',
+      'Savininkams, kurie jau bandė reklamą ar automatizavimo įrankį, bet vis tiek jaučiasi įstrigę',
     ],
-    industryCta: 'Odontologijos sprendimai',
-    customTitle: 'Individualus automatizavimas',
-    customDesc:
-      'Verslo lygio procesų DI, pritaikyta jūsų unikaliems darbo srautams. Nuo leadų maršrutizavimo iki sudėtingų integracijų tarp sistemų.',
-    customFeatures: [
-      'Individualūs DI agentai',
-      'CRM ir įrankių integracijos',
-      'Automatizavimo grandinės',
-      'Skalė pagal augimą',
-    ],
-    customCta: 'Užklausti individualaus sprendimo',
-  },
-  process: {
-    eyebrow: 'Mūsų metodika',
-    title: 'Keturių žingsnių transformacija',
-    subtitle:
-      'Patikrinta metodika, kaip sklandžiai integruoti DI į įmonę ir didinti efektyvumą nuo pirmos dienos.',
-    steps: [
-      {
-        title: 'Analizė (auditas)',
-        description:
-          'Identifikuojame registracijų, rankinio duomenų įvedimo ir kitų procesų kliūtis bei automatizavimo galimybes.',
-      },
-      {
-        title: 'Pritaikymas (mokymas)',
-        description:
-          'Mokome individualius DI modelius jūsų verslo duomenimis — pilnai pritaikytus Lietuvos kontekstui ir rinkai.',
-      },
-      {
-        title: 'Integracija (API/svetainė)',
-        description:
-          'Diegiame agentus tiesiai į CRM, svetainę ir veiklos procesus be prastovų.',
-      },
-      {
-        title: 'Skalė (24/7 palaikymas)',
-        description:
-          'Nuolatinis optimizavimas, stebėsena ir ataskaitos realiu laiku, kad užtikrintume maksimalų ROI.',
-      },
-    ],
+    howTitle: 'Kaip nusprendžiu, ko jums reikia',
+    howText:
+      'Kiekvienas bendradarbiavimas prasideda nuo trumpo jūsų rinkodaros, registracijos proceso ir leadų nutekėjimo įvertinimo. Iš to rekomenduoju vieną kryptį — ne paketą pagal nutylėjimą.',
   },
   services: {
-    title: 'Pagrindinės DI paslaugos',
-    subtitle: 'Tikslūs DI sprendimai, skirti pašalinti kliūtis ir pagreitinti augimą.',
+    eyebrow: 'Paslaugos',
+    title: 'Dvi kompetencijos. Vienas sprendimas, priimtas kartu.',
+    subtitle: 'Kuri (ar abi) tinka jūsų verslui — paaiškėja po įvertinimo, ne iš fiksuoto paketo.',
     items: [
       {
-        title: 'Agentinė rezervacija',
+        title: 'Rinkodara, kuri atveda klientus',
         description:
-          '24/7 DI balso ir pokalbių agentai registracijoms, vizitų planavimui ir priminimams. Nepraleiskite nė vienos galimybės.',
-        features: ['Balsas ir pokalbiai', 'Daugiakalbystė', 'Kalendoriaus sinchronizacija'],
+          'Google reklama, Meta reklama, vietinis SEO ir socialiniai tinklai — orientuoti į pilną grafiką, ne į „patikimus" skaičius.',
+        features: ['Google reklama', 'Meta reklama', 'Vietinis SEO', 'Socialiniai tinklai'],
+        outcome: 'Daugiau tinkamų žmonių jus suranda.',
       },
       {
-        title: 'Procesų autopilotas',
+        title: 'Automatizavimas, kuris sustabdo nutekėjimą',
         description:
-          'Panaikinkite rankinį duomenų įvedimą tarp CRM, el. pašto ir vidinių įrankių. Sklandus automatizavimas, kuris auga kartu su jumis.',
-        features: ['CRM integracija', 'El. pašto automatizavimas', 'Duomenų sinchronizacija'],
+          'Momentinis atsakymas leadams, internetinė rezervacija ir atsiliepimų prašymai — kad nė viena užklausa nelieka be atsakymo.',
+        features: ['Leadų apdorojimas', 'Internetinė rezervacija', 'Atsiliepimų prašymai', 'Procesų automatizavimas'],
+        outcome: 'Nė vienas klientas nepradingsta.',
       },
       {
-        title: 'Atsakymų varikliai',
+        title: 'Pilna augimo partnerystė',
         description:
-          'Individualiai apmokytos DI žinių bazės komandai ar klientų aptarnavimui. Momentiniai atsakymai iš jūsų dokumentų.',
-        features: ['Individualus mokymas', 'Vidinis/išorinis', 'Realaus laiko atnaujinimai'],
+          'Kai įvertinimas parodo, kad reikia abiejų — vedu rinkodarą ir automatizavimą kaip vieną sistemą, ne du atskirus tiekėjus.',
+        features: ['Sujungta strategija', 'Vienas kontaktinis asmuo', 'Mėnesinės ataskaitos'],
+        outcome: 'Rinkodara ir aptarnavimas pagaliau veikia kartu.',
       },
     ],
   },
-  results: {
-    eyebrow: 'Įrodytas poveikis',
-    title: 'Tikri rezultatai',
-    subtitle: 'Kaip SensaraAI keičia veiklos procesus skirtingose industrijose.',
-    cards: [
+  process: {
+    eyebrow: 'Kaip tai vyksta',
+    title: 'Keturi žingsniai, be spėliojimų',
+    subtitle: 'Aiškus kelias nuo „nežinau, kas negerai" iki sistemos, kuri veikia pati.',
+    steps: [
       {
-        vertical: 'Medicina',
-        title: 'Vilniaus odontologijos klinika',
-        metric: '34%',
-        metricLabel: 'Daugiau pacientų registracijų',
+        title: 'Įvertinimas',
         description:
-          'Įdiegtas DI rezervacijos agentas, kuris aptarnauja užklausas 24/7, sumažina registratūros apkrovą ir fiksuoja vizitus po darbo valandų.',
+          'Peržiūriu jūsų rinkodarą, registracijos procesą ir leadus, kad tiksliai rasčiau, kur prarandate klientus.',
       },
       {
-        vertical: 'Įmonės',
-        title: 'Baltijos logistikos įmonė',
-        metric: '80%',
-        metricLabel: 'Automatizuotų aptarnavimo užklausų',
+        title: 'Rekomendacija',
         description:
-          'Individualus LLM, apmokytas vidine žinių baze — žymiai greitesni atsakymai ir mažesnės sąnaudos.',
+          'Gaunate aiškų planą paprasta kalba — rinkodarą, automatizaciją, ar abu — be spaudimo pirkti daugiau, nei reikia.',
       },
       {
-        vertical: 'MVĮ',
-        title: 'Profesionalios paslaugos',
-        metric: '€12k',
-        metricLabel: 'Atgautų pajamų per mėnesį',
+        title: 'Įgyvendinimas',
         description:
-          'DI priminimai ir automatizuoti follow-up sumažino praleistus vizitus ir supaprastino klientų įvedimą.',
+          'Viską sukuriu pats — kampanijas, rezervacijos sistemas, automatizacijas — tiesiai jūsų esamuose įrankiuose.',
+      },
+      {
+        title: 'Tobulinimas',
+        description: 'Kiekvieną mėnesį stebiu rezultatus ir koreguoju, kad sistema veiktų kartu su jūsų verslu.',
       },
     ],
   },
-  compliance: {
-    title: 'Atitiktis ir saugumas',
-    subtitle:
-      'Sukurta reguliuojamoms industrijoms. Jūsų duomenų saugumas ir atitiktis — mūsų prioritetas.',
+  proof: {
+    eyebrow: 'Rezultatai',
+    title: 'Sėkmės istorijos netrukus',
+    subtitle: 'Esu tik pradžioje — tikri klientų rezultatai atsiras čia, kai tik jų sulauksiu. Norite būti pirmi?',
+    verticals: ['Grožio klinika', 'Medicinos kabinetas', 'Vietinis paslaugų verslas'],
+    comingSoon: 'Netrukus',
+  },
+  trust: {
+    title: 'Kodėl vietiniai verslai renkasi mane',
+    subtitle: 'Jokių account managerių, ilgų sutarčių ar žargono.',
     items: [
       {
-        title: 'BDAR atitinkantis',
-        description:
-          'Pilna atitiktis Europos duomenų apsaugos reikalavimams. Jūsų duomenys tvarkomi aukščiausiu saugumo lygiu.',
+        title: 'Kalbatės tiesiogiai su manimi',
+        description: 'Jokių account managerių ar perdavimų. Planuoju, kuriu ir prižiūriu viską pats.',
       },
       {
-        title: 'Gimtoji lietuvių kalba',
-        description:
-          'Mūsų DI agentai apmokyti lietuvių kalbai — natūralūs pokalbiai ir tinkamas kultūrinis kontekstas.',
+        title: 'Pirmiau įvertinimas, tada pasiūlymas',
+        description: 'Rekomenduoju tai, kas tinka jūsų verslui, o ne tai, ką lengviausia man parduoti.',
       },
       {
-        title: 'Verslo lygio saugumas',
-        description:
-          'Bankinio lygio šifravimas, saugūs duomenų centrai ir griežta prieigos kontrolė jautriai informacijai.',
+        title: 'Sukurta Lietuvai',
+        description: 'Vietinė kalba, vietinis paieškos elgesys, vietinis kontekstas — ne bendras šablonas.',
       },
     ],
-    banner: 'Pasitiki sveikatos priežiūros ir verslo įmonės Baltijos šalyse',
-    stats: ['50+ klinikų', '100K+ automatizuotų vizitų', '99,9% veikimo laikas'],
+    banner: 'Šiuo metu priimu ribotą naujų klientų skaičių kiekvieną mėnesį.',
   },
   cta: {
-    title: 'Nemokama DI konsultacija',
-    subtitle: 'Atsakykite į kelis klausimus — paruošime individualią DI strategiją jūsų verslui.',
+    title: 'Užsisakyti nemokamą pokalbį',
+    subtitle: 'Atsakykite į kelis klausimus, kad galėčiau pasiruošti prieš pokalbį — užtruks apie minutę.',
     stepOf: 'Žingsnis',
     of: 'iš',
     complete: 'užpildyta',
@@ -164,228 +123,108 @@ export const lt: Translation = {
     continue: 'Toliau',
     submit: 'Pateikti',
     processing: 'Siunčiama...',
-    successTitle: 'Užklausa gauta',
-    successMessage:
-      'Per 24 valandas išanalizuosime jūsų poreikius ir susisieksime su individualia DI strategija.',
+    successTitle: 'Gauta — ačiū.',
+    successMessage: 'Peržiūrėsiu jūsų atsakymus ir susisieksiu per 24 valandas dėl pokalbio laiko.',
     returnHome: 'Grįžti į pradžią',
-    optionalField: 'Neprivalomas laukas',
+    optionalField: 'Neprivaloma',
     steps: [
       {
         title: 'Kaip jus vadinti?',
-        subtitle: 'Parašykite vardą',
+        subtitle: 'Tik vardas ir el. paštas',
         fields: [
           { label: 'Vardas ir pavardė', placeholder: 'Jonas Jonaitis' },
           { label: 'El. paštas', placeholder: 'jonas@imone.lt' },
         ],
       },
       {
-        title: 'Kokia jūsų sritis?',
-        subtitle: 'Padeda pritaikyti DI sprendimus',
-        options: ['Medicina', 'Odontologija', 'SaaS', 'E. prekyba', 'Profesionalios paslaugos', 'Kita'],
+        title: 'Kokį verslą turite?',
+        subtitle: 'Padės pasiruošti aktualius pavyzdžius',
+        options: ['Grožio klinika', 'Medicinos kabinetas', 'Vietinis paslaugų verslas', 'Kita'],
       },
       {
-        title: 'Koks komandos dydis?',
-        subtitle: 'Pritaikome sprendimus bet kokiam mastui',
-        options: ['1–10 darbuotojų', '11–50 darbuotojų', '51–200 darbuotojų', '200+ darbuotojų'],
+        title: 'Kokia didesnė problema šiuo metu?',
+        subtitle: 'Pasirinkite artimiausią',
+        options: ['Trūksta naujų klientų', 'Per daug rankinio administravimo', 'Abu, tiesą sakant', 'Dar nežinau'],
       },
       {
-        title: 'Kokia pagrindinė problema?',
-        subtitle: 'Pasirinkite prioritetą',
-        options: [
-          'Pacientų/leadų rezervacija',
-          'Rankinis duomenų įvedimas',
-          'Per didelė aptarnavimo apkrova',
-          'Neatvykimai ir atšaukimai',
-          'Kita',
-        ],
-      },
-      {
-        title: 'Kokie įrankiai dabar?',
-        subtitle: 'Neprivaloma — padeda suprasti jūsų stack',
-        placeholder: 'pvz., Salesforce, HubSpot, Calendly...',
+        title: 'Kokius įrankius jau naudojate?',
+        subtitle: 'Neprivaloma — padeda suprasti jūsų sistemą',
+        placeholder: 'pvz., Google Calendar, Instagram, rezervacijų programa...',
       },
     ],
   },
   footer: {
     tagline:
-      'Išmaniosios DI sistemos augantiems verslams. Automatizuojame pacientų pritraukimą, leadų valdymą ir sudėtingus procesus.',
+      'Rinkodara ir DI automatizavimas vietiniams verslams — sprendžiama pagal tai, ko jums iš tikrųjų reikia, ne pagal fiksuotą paketą.',
     links: 'Nuorodos',
-    solutions: 'Sprendimai',
+    services: 'Paslaugos',
     about: 'Apie',
     caseStudies: 'Sėkmės istorijos',
-    dentalMedical: 'Odontologija ir medicina',
-    customAutomation: 'Individualus automatizavimas',
-    ourProcess: 'Mūsų procesas',
+    process: 'Kaip tai vyksta',
     contact: 'Kontaktai',
     email: 'info@sensaraai.com',
+    phone: '+370 624 35779',
     location: 'Vilnius, Lietuva',
-    copyright: '© 2025 SensaraAI. Visos teisės saugomos.',
+    copyright: 'SensaraAI. Visos teisės saugomos.',
     privacy: 'Privatumo politika',
     terms: 'Naudojimo sąlygos',
   },
   about: {
     heroTitle: 'Sveiki. Aš esu Airidas.',
     heroSubtitle:
-      'Kuriu AI sistemas, kurios padeda Lietuvos verslams dirbti greičiau ir protingiau — be bereikalingo sudėtingumo.',
+      'Padedu vietiniams Lietuvos verslams augti — per rinkodarą, DI automatizaciją, ar abu, priklausomai nuo to, kas iš tikrųjų duoda rezultatą.',
     backgroundTitle: 'Mano patirtis',
     background:
-      'Solo įkūrėjas, bazė Vilniuje. Kuriu DI automatizavimo sistemas klinikoms ir paslaugų verslams. Šiuo metu dirbu su odontologijos klinikomis visoje Lietuvoje.',
+      'Solo įkūrėjas, bazė Vilniuje. Dirbu su grožio klinikomis, medicinos kabinetais ir vietiniais paslaugų verslais visoje Lietuvoje — vedu jų rinkodarą, kuriu automatizaciją, arba abu, priklausomai nuo kiekvieno verslo poreikio.',
     whyTitle: 'Kodėl sukūriau SensaraAI',
-    why: 'Lietuvos verslai atsilieka automatizavimo srityje. Dauguma įrankių kuriami Vakarų rinkoms ir netinka vietiniams procesams, kalbai ar mastui. Aš tai taisau.',
+    why: 'Vietiniai verslai dažniausiai gauna tik vieną dalį: rinkodaros agentūrą, kuri neliečia registracijos proceso, arba automatizavimo specialistą, kuris neliečia reklamos. Sukūriau SensaraAI, kad užpildyčiau šitą spragą — vienas žmogus, matantis visą vaizdą.',
     howTitle: 'Kaip dirbu',
-    how: 'Tiesiai. Be account managerių. Kalbatės su manimi. Aš planuoju, kuriu ir prižiūriu viską pats — arba su mažu patikimu tinklu.',
-    techTitle: 'Technologijos',
-    tech: ['N8N', 'Supabase', 'Next.js', 'OpenAI', 'Resend', 'Vercel'],
+    how: 'Tiesiai. Be account managerių. Kalbatės su manimi. Įvertinu, planuoju, kuriu ir prižiūriu viską pats — arba su mažu patikimu tinklu.',
+    techTitle: 'Įrankiai, su kuriais dirbu',
+    tech: ['Google Ads', 'Meta Ads', 'N8N', 'Supabase', 'OpenAI', 'Vercel'],
     photoAlt: 'Airidas — SensaraAI įkūrėjas',
     photoPlaceholder: 'Nuotrauka netrukus',
     cta: 'Susisiekime',
   },
   servicesPage: {
-    title: 'Sprendimai',
-    subtitle: 'Viskas, ką kuriu — orientuota į rezultatus, ne į žargonus.',
-    ctaTitle: 'Nežinote, kuris sprendimas tinka?',
-    ctaSubtitle: 'Pasikalbėkime.',
-    ctaButton: 'Pasikalbėkime',
+    title: 'Paslaugos',
+    subtitle: 'Dvi kompetencijos po vienu stogu. Ką gaunate, priklauso nuo įvertinimo, ne nuo fiksuoto paketo.',
+    ctaTitle: 'Nežinote, kuri tinka?',
+    ctaSubtitle: 'Būtent tam ir skirtas nemokamas pokalbis.',
+    ctaButton: 'Užsisakyti nemokamą pokalbį',
     items: [
       {
-        title: 'Pacientų ir klientų rezervacijos sistema',
+        title: 'Rinkodara',
         description:
-          'Automatinė rezervacija su patvirtinimu, priminimais ir atšaukimų tvarkymu. Integruojasi su jūsų kalendoriumi.',
-        outcome: 'Baigėsi telefonų maratonai. Klientai rezervuoja patys.',
+          'Google reklama, Meta reklama, vietinis SEO ir socialinių tinklų turinys — orientuoti į klientus, kurie tikrai pasiruošę rezervuotis, ne vien paspaudimus.',
+        bullets: ['Google reklama', 'Meta reklama (Facebook ir Instagram)', 'Vietinis SEO', 'Socialinių tinklų turinys'],
+        outcome: 'Daugiau tinkamų žmonių jus suranda.',
       },
       {
-        title: 'CRM sistema su valdymo skydeliu',
+        title: 'DI automatizavimas',
         description:
-          'Pilna klientų valdymo sistema — leadai, istorija, pastabos ir komunikacija vienoje vietoje.',
-        outcome: 'Visada žinote, kam reikia follow-up.',
+          'Momentinis atsakymas leadams, internetinės rezervacijos sistemos, atsiliepimų prašymai ir procesų automatizavimas tarp jūsų jau naudojamų įrankių.',
+        bullets: ['Momentinis leadų apdorojimas', 'Internetinės rezervacijos sistemos', 'Automatiniai atsiliepimų prašymai', 'Procesų automatizavimas (N8N)'],
+        outcome: 'Nė vienas klientas nepradingsta.',
       },
       {
-        title: 'Svetainės atnaujinimas',
+        title: 'Pilna augimo partnerystė',
         description:
-          'Greita, moderni svetainė ant Next.js. Optimizuota Lietuvos SEO, mobile-first ir lengvai atnaujinama.',
-        outcome: 'Svetainė, kuri tikrai konvertuoja.',
-      },
-      {
-        title: 'AI pokalbių robotas',
-        description:
-          'Individualus robotas, apmokytas jūsų verslu — atsako į klausimus, kvalifikuoja leadus ir rezervuoja vizitus 24/7.',
-        outcome: 'Jūsų verslas niekada nemiega.',
-      },
-      {
-        title: 'N8N automatizavimas',
-        description:
-          'Sujunkite įrankius ir automatizuokite rutiną — nuo el. laiškų iki CRM atnaujinimų ir sąskaitų.',
-        outcome: 'Valandos sutaupomos kiekvieną savaitę automatiškai.',
-      },
-      {
-        title: 'Mėnesinis palaikymas',
-        description: 'Kiekvieną mėnesį stebiu, atnaujinu ir tobulinu jūsų sistemas. Jūs fokusuojatės į verslą.',
-        outcome: 'Sukonfigūruokite — likusią dalį tvarkau aš.',
+          'Kai įvertinimas parodo, kad tiek rinkodara, tiek automatizavimas stabdo augimą, vedu juos kaip vieną sujungtą sistemą su vienu kontaktiniu asmeniu.',
+        bullets: ['Sujungta rinkodaros ir automatizavimo strategija', 'Vienas kontaktinis asmuo', 'Mėnesinės ataskaitos ir korekcijos'],
+        outcome: 'Rinkodara ir aptarnavimas pagaliau veikia kartu.',
       },
     ],
   },
   caseStudiesPage: {
     title: 'Sėkmės istorijos',
-    subtitle: 'Tikri rezultatai tikriems verslams. Netrukus daugiau.',
+    subtitle: 'Esu tik pradžioje — tikri vietinių verslų rezultatai atsiras čia, kai tik jų sulauksiu.',
     comingSoon: 'Netrukus',
     placeholderText: 'Pilna sėkmės istorija netrukus.',
     cards: [
-      { vertical: 'Medicina', title: 'Vision Dental Clinic', metric: '34%' },
-      { vertical: 'Įmonės', title: 'Ratio Logistics', metric: '80%' },
-      { vertical: 'MVĮ', title: 'Professional Services', metric: '€12k' },
+      { vertical: 'Grožio klinika', title: 'Pilna istorija netrukus' },
+      { vertical: 'Medicinos kabinetas', title: 'Pilna istorija netrukus' },
+      { vertical: 'Vietinis paslaugų verslas', title: 'Pilna istorija netrukus' },
     ],
-  },
-  contactPage: {
-    title: 'Kalbėkimės',
-    subtitle:
-      'Užpildykite formą — atsakysiu per 24 valandas. Arba rašykite tiesiai el. paštu: info@sensaraai.com',
-    fullName: 'Vardas ir pavardė',
-    email: 'El. paštas',
-    company: 'Įmonės / klinikos pavadinimas',
-    need: 'Kuo galiu padėti?',
-    message: 'Žinutė',
-    send: 'Siųsti',
-    sending: 'Siunčiama...',
-    success: 'Žinutė išsiųsta! Atsakysiu per 24 valandas.',
-    error: 'Kažkas nepavyko. Bandykite dar kartą arba rašykite tiesiai el. paštu.',
-    needs: [
-      'Rezervacijos sistema',
-      'CRM',
-      'Svetainė',
-      'Pokalbių robotas',
-      'N8N automatizavimas',
-      'Palaikymas',
-      'Dar nežinau',
-    ],
-  },
-  dentalPage: {
-    badge: 'Odontologijos ir medicinos sprendimai',
-    titleLine1: 'Užpildykite kiekvieną kėdę.',
-    titleLine2: 'Nepraleiskite nė vieno skambučio.',
-    subtitle:
-      'DI rezervacijos agentai, dirbantys 24/7, kalbantys lietuviškai ir sumažinantys neatvykimus iki 42%. Sukurta odontologijos ir medicinos klinikoms.',
-    ctaPrimary: 'Nemokama konsultacija',
-    ctaSecondary: 'Peržiūrėti rezultatus',
-    stats: [
-      { value: '42%', label: 'Mažiau neatvykimų' },
-      { value: '24/7', label: 'Rezervacijų aprėptis' },
-      { value: '3x', label: 'Greitesnis atsakymas' },
-      { value: '89%', label: 'Pacientų pasitenkinimas' },
-    ],
-    featuresTitle: 'Sukurta odontologijos klinikoms',
-    featuresSubtitle:
-      'Kiekviena funkcija sprendžia unikalias odontologijos klinikų valdymo problemas.',
-    features: [
-      {
-        title: 'DI valdomas planavimas',
-        description:
-          'Išmanūs rezervacijos agentai, suprantantys pacientų pageidavimus, draudimą ir vizitų tipus.',
-      },
-      {
-        title: 'Automatiniai priminimai',
-        description:
-          'Priminimai SMS, el. paštu ir balsu — sumažina neatvykimus iki 42%.',
-      },
-      {
-        title: 'Gimtoji lietuvių kalba',
-        description:
-          'DI agentai, apmokyti natūraliai lietuviškai kalbėti ir suprasti vietinį kontekstą.',
-      },
-      {
-        title: 'Sklandi integracija',
-        description:
-          'Veikia su jūsų esama klinikos valdymo sistema. Jums nereikia techninių pakeitimų.',
-      },
-    ],
-    testimonialsTitle: 'Pasitiki pirmaujančios klinikos',
-    testimonialsSubtitle: 'Tikri rezultatai odontologijos klinikose Baltijos šalyse.',
-    testimonials: [
-      {
-        name: 'Dr. Aistė Petronytė',
-        role: 'Odontologijos klinikos direktorė',
-        clinic: 'Vilnius Smile Center',
-        content:
-          'Per dvi mėnesius neatvykimų rodiklis sumažėjo nuo 15% iki mažiau nei 6%. DI puikiai tvarko rezervacijas po darbo valandų.',
-      },
-      {
-        name: 'Dr. Mindaugas Žukauskas',
-        role: 'Klinikos savininkas',
-        clinic: 'Kaunas Dental Arts',
-        content:
-          'Pacientai dažnai neįsivaizduoja, kad kalbasi su DI. Lietuvių kalbos palaikymas — išskirtinis.',
-      },
-      {
-        name: 'Dr. Eglė Kazlauskaitė',
-        role: 'Ortodontė',
-        clinic: 'Smile Studio',
-        content:
-          'Registratūra gali fokusuotis į klientus klinikoje, o DI tvarko visus telefono užsakymus.',
-      },
-    ],
-    ctaBlockTitle: 'Pasiruošę transformuoti kliniką?',
-    ctaBlockSubtitle:
-      'Prisijunkite prie 50+ odontologijos klinikų, kurios su SensaraAI mažina neatvykimus ir automatizuoja rezervacijas.',
-    ctaBlockButton: 'Nemokama konsultacija',
-    industryPrefill: 'Odontologija',
   },
 };

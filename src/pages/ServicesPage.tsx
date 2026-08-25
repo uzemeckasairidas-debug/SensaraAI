@@ -1,31 +1,16 @@
 import { motion } from 'framer-motion';
-import {
-  Calendar,
-  LayoutDashboard,
-  Globe,
-  MessageSquare,
-  Workflow,
-  Shield,
-  type LucideIcon,
-} from 'lucide-react';
+import { Megaphone, Workflow, Handshake, type LucideIcon } from 'lucide-react';
 import { useLanguage } from '../../lib/i18n/LanguageContext';
-import { Button } from '../components/ui/Button';
+import { CTABanner } from '../components/ui/CTABanner';
 
-const serviceIcons: LucideIcon[] = [
-  Calendar,
-  LayoutDashboard,
-  Globe,
-  MessageSquare,
-  Workflow,
-  Shield,
-];
+const serviceIcons: LucideIcon[] = [Megaphone, Workflow, Handshake];
 
 export function ServicesPage() {
   const { t } = useLanguage();
   const s = t.servicesPage;
 
   return (
-    <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <div className="pt-32 pb-4 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -36,9 +21,10 @@ export function ServicesPage() {
           <p className="text-lg text-white/60 max-w-2xl mx-auto">{s.subtitle}</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        <div className="grid md:grid-cols-3 gap-6 mb-4">
           {s.items.map((service, index) => {
             const Icon = serviceIcons[index];
+            const accent = index === 2;
             return (
               <motion.div
                 key={service.title}
@@ -48,32 +34,33 @@ export function ServicesPage() {
                 transition={{ delay: index * 0.05 }}
                 className="glass-card p-8 flex flex-col border border-white/10"
               >
-                <div className="w-12 h-12 rounded-xl bg-accent-500/20 flex items-center justify-center mb-6">
-                  <Icon className="w-6 h-6 text-accent-400" />
+                <div
+                  className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 ${
+                    accent ? 'bg-accent-500/20' : 'bg-white/10'
+                  }`}
+                >
+                  <Icon className={`w-6 h-6 ${accent ? 'text-accent-400' : 'text-white'}`} />
                 </div>
-                <h2 className="text-lg font-bold text-white mb-3">{service.title}</h2>
-                <p className="text-white/60 text-sm leading-relaxed mb-6 flex-grow">
-                  {service.description}
-                </p>
-                <p className="text-accent-400 text-sm italic">{service.outcome}</p>
+                <h2 className="text-xl font-bold text-white mb-3">{service.title}</h2>
+                <p className="text-white/60 text-sm leading-relaxed mb-6">{service.description}</p>
+
+                <ul className="space-y-2 mb-6">
+                  {service.bullets.map((bullet) => (
+                    <li key={bullet} className="flex items-center gap-2 text-white/70 text-sm">
+                      <div className="w-1.5 h-1.5 rounded-full bg-accent-400 shrink-0" />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="text-accent-400 text-sm italic mt-auto">{service.outcome}</p>
               </motion.div>
             );
           })}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="glass-card p-12 text-center"
-        >
-          <h2 className="text-2xl font-bold text-white mb-2">{s.ctaTitle}</h2>
-          <p className="text-white/60 mb-8">{s.ctaSubtitle}</p>
-          <Button href="/#assessment" size="lg">
-            {s.ctaButton}
-          </Button>
-        </motion.div>
       </div>
+
+      <CTABanner title={s.ctaTitle} subtitle={s.ctaSubtitle} buttonLabel={s.ctaButton} />
     </div>
   );
 }

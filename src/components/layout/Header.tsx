@@ -1,29 +1,23 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useLanguage } from '../../../lib/i18n/LanguageContext';
 import { LanguageToggle } from '../i18n/LanguageToggle';
 import { Button } from '../ui/Button';
 import { Logo } from '../ui/Logo';
 
 const navLinks = [
-  {
-    key: 'solutions' as const,
-    dropdown: [
-      { key: 'dentalMedical' as const, to: '/solutions/dental' },
-      { key: 'customAutomation' as const, to: '/#services' },
-    ],
-  },
+  { key: 'services' as const, to: '/services' },
   { key: 'process' as const, to: '/#process' },
   { key: 'caseStudies' as const, to: '/case-studies' },
+  { key: 'about' as const, to: '/about' },
 ];
 
 export function Header() {
   const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -34,7 +28,6 @@ export function Header() {
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
-    setOpenDropdown(null);
   }, [location]);
 
   return (
@@ -48,56 +41,21 @@ export function Header() {
           <Logo variant="navbar" />
 
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) =>
-              link.dropdown ? (
-                <div
-                  key={link.key}
-                  className="relative"
-                  onMouseEnter={() => setOpenDropdown(link.key)}
-                  onMouseLeave={() => setOpenDropdown(null)}
-                >
-                  <button className="flex items-center gap-1 text-white/70 hover:text-white transition-colors">
-                    {t.nav[link.key]}
-                    <ChevronDown className="w-4 h-4" />
-                  </button>
-                  <AnimatePresence>
-                    {openDropdown === link.key && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 mt-2 w-48 glass-card p-2"
-                      >
-                        {link.dropdown.map((item) => (
-                          <Link
-                            key={item.key}
-                            to={item.to}
-                            className="block px-4 py-2 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
-                          >
-                            {t.nav[item.key]}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ) : (
-                <Link
-                  key={link.key}
-                  to={link.to || '#'}
-                  className="text-white/70 hover:text-white transition-colors"
-                >
-                  {t.nav[link.key]}
-                </Link>
-              )
-            )}
+            {navLinks.map((link) => (
+              <Link
+                key={link.key}
+                to={link.to}
+                className="text-white/70 hover:text-white transition-colors"
+              >
+                {t.nav[link.key]}
+              </Link>
+            ))}
           </div>
 
           <div className="hidden md:flex items-center gap-3">
             <LanguageToggle />
-            <Button href="/#assessment" size="sm">
-              {t.nav.bookDemo}
+            <Button to="/contact" size="sm">
+              {t.nav.bookCall}
             </Button>
           </div>
 
@@ -122,48 +80,17 @@ export function Header() {
             className="md:hidden glass mt-2 mx-4 rounded-2xl overflow-hidden"
           >
             <div className="p-4 space-y-4">
-              {navLinks.map((link) =>
-                link.dropdown ? (
-                  <div key={link.key}>
-                    <button
-                      onClick={() =>
-                        setOpenDropdown(openDropdown === link.key ? null : link.key)
-                      }
-                      className="flex items-center justify-between w-full text-white/70"
-                    >
-                      {t.nav[link.key]}
-                      <ChevronDown
-                        className={`w-4 h-4 transition-transform ${
-                          openDropdown === link.key ? 'rotate-180' : ''
-                        }`}
-                      />
-                    </button>
-                    {openDropdown === link.key && (
-                      <div className="mt-2 ml-4 space-y-2">
-                        {link.dropdown.map((item) => (
-                          <Link
-                            key={item.key}
-                            to={item.to}
-                            className="block py-2 text-white/60 hover:text-white"
-                          >
-                            {t.nav[item.key]}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    key={link.key}
-                    to={link.to || '#'}
-                    className="block text-white/70 hover:text-white"
-                  >
-                    {t.nav[link.key]}
-                  </Link>
-                )
-              )}
-              <Button href="/#assessment" className="w-full">
-                {t.nav.bookDemo}
+              {navLinks.map((link) => (
+                <Link
+                  key={link.key}
+                  to={link.to}
+                  className="block text-white/70 hover:text-white"
+                >
+                  {t.nav[link.key]}
+                </Link>
+              ))}
+              <Button to="/contact" className="w-full">
+                {t.nav.bookCall}
               </Button>
             </div>
           </motion.div>

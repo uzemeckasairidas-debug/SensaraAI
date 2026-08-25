@@ -1,13 +1,12 @@
 import { motion } from 'framer-motion';
-import { Card } from '../ui/Card';
-import { TrendingUp, Clock, Users } from 'lucide-react';
+import { Lock, Sparkles, Stethoscope, Wrench } from 'lucide-react';
 import { useLanguage } from '../../../lib/i18n/LanguageContext';
 
-const caseIcons = [Users, Clock, TrendingUp];
+const verticalIcons = [Sparkles, Stethoscope, Wrench];
 
 export function CaseStudies() {
   const { t } = useLanguage();
-  const c = t.results;
+  const c = t.proof;
 
   return (
     <section id="case-studies" className="py-24 px-4 sm:px-6 lg:px-8">
@@ -26,47 +25,30 @@ export function CaseStudies() {
           <p className="text-white/60 max-w-2xl mx-auto">{c.subtitle}</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {c.cards.map((study, index) => {
-            const Icon = caseIcons[index];
-            const colors = [
-              'from-blue-500/20 to-accent-500/5',
-              'from-indigo-500/20 to-accent-500/5',
-              'from-emerald-500/20 to-accent-500/5',
-            ];
-            const iconColors = ['text-blue-400', 'text-indigo-400', 'text-emerald-400'];
+        <div className="grid md:grid-cols-3 gap-6">
+          {c.verticals.map((vertical, index) => {
+            const Icon = verticalIcons[index];
             return (
               <motion.div
-                key={study.title}
+                key={vertical}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative rounded-2xl border border-white/10 bg-dark-800/80 p-8 overflow-hidden min-h-[220px] flex items-center justify-center"
               >
-                <Card
-                  className={`h-full relative overflow-hidden group bg-gradient-to-br ${colors[index]} border-white/5`}
-                >
-                  <div className="relative z-10 flex flex-col h-full">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="p-2.5 rounded-xl bg-dark-900 border border-white/10">
-                        <Icon className={`w-5 h-5 ${iconColors[index]}`} />
-                      </div>
-                      <span className="text-sm font-semibold text-white/80 uppercase tracking-wide">
-                        {study.vertical}
-                      </span>
-                    </div>
+                <div className="blur-sm select-none pointer-events-none opacity-40 text-center">
+                  <Icon className="w-8 h-8 text-white/50 mx-auto mb-4" />
+                  <span className="text-sm font-semibold text-white/50 uppercase tracking-wide">
+                    {vertical}
+                  </span>
+                </div>
 
-                    <h3 className="text-5xl font-bold text-white mb-2">{study.metric}</h3>
-                    <p className="text-accent-400 font-medium mb-6">{study.metricLabel}</p>
-
-                    <h4 className="text-lg font-semibold text-white mb-2">{study.title}</h4>
-                    <p className="text-white/60 text-sm leading-relaxed flex-grow">
-                      &ldquo;{study.description}&rdquo;
-                    </p>
-                  </div>
-
-                  <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </Card>
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-dark-900/70 backdrop-blur-sm">
+                  <Lock className="w-6 h-6 text-accent-400/80 mb-3" />
+                  <span className="text-white font-medium tracking-wide text-sm">{c.comingSoon}</span>
+                  <span className="text-white/40 text-xs mt-1">{vertical}</span>
+                </div>
               </motion.div>
             );
           })}

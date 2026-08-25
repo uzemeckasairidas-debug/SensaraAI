@@ -60,11 +60,11 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Button to="/services" size="lg">
-            {h.viewSolutions}
+          <Button to="/contact" size="lg">
+            {h.primaryCta}
           </Button>
-          <Button href="/#assessment" variant="secondary" size="lg">
-            {h.bookDemo}
+          <Button href="/#what-i-do" variant="secondary" size="lg">
+            {h.secondaryCta}
           </Button>
         </motion.div>
 
@@ -75,11 +75,12 @@ export function Hero() {
           className="mt-20"
         >
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-white/40 text-sm">
-            <span>{h.trusted}</span>
-            <span className="hidden sm:block w-1 h-1 rounded-full bg-white/40" />
-            <span>{h.gdpr}</span>
-            <span className="hidden sm:block w-1 h-1 rounded-full bg-white/40" />
-            <span>{h.coverage}</span>
+            {h.trust.map((item, i) => (
+              <span key={item} className="flex items-center gap-4 sm:gap-8">
+                {i > 0 && <span className="hidden sm:block w-1 h-1 rounded-full bg-white/40" />}
+                {item}
+              </span>
+            ))}
           </div>
         </motion.div>
       </div>
