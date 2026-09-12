@@ -34,7 +34,7 @@ export default {
       },
       animation: {
         'glow': 'glow 2s ease-in-out infinite alternate',
-        'shimmer': 'shimmer 2.5s infinite linear',
+        'shimmer': 'shimmer 3.2s infinite linear',
         'float': 'float 9s ease-in-out infinite',
         'float-delayed': 'float 11s ease-in-out infinite 1.5s',
       },

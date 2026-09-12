@@ -48,7 +48,7 @@ export function Button({
     <>
       <span className="relative z-10">{children}</span>
       {variant === 'primary' && (
-        <div className="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 shimmer-effect opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
       )}
     </>
   );

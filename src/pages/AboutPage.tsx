@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../../lib/i18n/LanguageContext';
 import { Button } from '../components/ui/Button';
+import { Reveal } from '../components/ui/Reveal';
 
 export function AboutPage() {
   const { t } = useLanguage();
@@ -55,25 +56,13 @@ export function AboutPage() {
 
         <div className="space-y-12 mb-16">
           {sections.map((section, index) => (
-            <motion.section
-              key={section.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="glass-card p-8"
-            >
+            <Reveal key={section.title} delay={index * 0.08} className="glass-card p-8">
               <h2 className="text-xl font-bold text-ink-900 mb-4">{section.title}</h2>
               <p className="text-ink-600 leading-relaxed">{section.body}</p>
-            </motion.section>
+            </Reveal>
           ))}
 
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="glass-card p-8"
-          >
+          <Reveal className="glass-card p-8">
             <h2 className="text-xl font-bold text-ink-900 mb-4">{a.techTitle}</h2>
             <div className="flex flex-wrap gap-3">
               {a.tech.map((tech) => (
@@ -85,7 +74,7 @@ export function AboutPage() {
                 </span>
               ))}
             </div>
-          </motion.section>
+          </Reveal>
         </div>
 
         <div className="text-center">

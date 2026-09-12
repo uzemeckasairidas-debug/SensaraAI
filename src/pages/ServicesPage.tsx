@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Megaphone, Workflow, Handshake, type LucideIcon } from 'lucide-react';
 import { useLanguage } from '../../lib/i18n/LanguageContext';
 import { CTABanner } from '../components/ui/CTABanner';
+import { Reveal } from '../components/ui/Reveal';
 
 const serviceIcons: LucideIcon[] = [Megaphone, Workflow, Handshake];
 
@@ -26,13 +27,10 @@ export function ServicesPage() {
             const Icon = serviceIcons[index];
             const accent = index === 2;
             return (
-              <motion.div
+              <Reveal
                 key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="glass-card p-8 flex flex-col transition-shadow duration-300 hover:shadow-[0_16px_48px_rgba(24,24,27,0.1)]"
+                delay={index * 0.08}
+                className="glass-card-interactive p-8 flex flex-col h-full"
               >
                 <div
                   className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 ${
@@ -54,7 +52,7 @@ export function ServicesPage() {
                 </ul>
 
                 <p className="text-accent-600 text-sm italic mt-auto">{service.outcome}</p>
-              </motion.div>
+              </Reveal>
             );
           })}
         </div>

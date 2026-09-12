@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowLeft, Check, Loader2 } from 'lucide-react';
 import { useLanguage } from '../../../lib/i18n/LanguageContext';
 import { Button } from '../ui/Button';
+import { Reveal } from '../ui/Reveal';
 
 const stepMeta = [
   {
@@ -127,16 +128,10 @@ export function Contact({ prefillIndustry }: ContactProps) {
   return (
     <section id="assessment" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
+        <Reveal className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-ink-900 mb-4">{c.title}</h2>
           <p className="text-ink-600">{c.subtitle}</p>
-        </motion.div>
+        </Reveal>
 
         <div className="glass-card p-8">
           <div className="mb-8">

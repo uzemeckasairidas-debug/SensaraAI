@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Clock, Sparkles, Stethoscope, Wrench } from 'lucide-react';
 import { useLanguage } from '../../lib/i18n/LanguageContext';
 import { CTABanner } from '../components/ui/CTABanner';
+import { Reveal } from '../components/ui/Reveal';
 
 const verticalIcons = [Sparkles, Stethoscope, Wrench];
 
@@ -25,12 +26,9 @@ export function CaseStudiesPage() {
           {c.cards.map((card, index) => {
             const Icon = verticalIcons[index];
             return (
-              <motion.div
+              <Reveal
                 key={card.vertical}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                delay={index * 0.08}
                 className="rounded-2xl border border-dashed border-black/15 bg-black/[0.015] p-8 min-h-[260px] flex flex-col items-center justify-center text-center"
               >
                 <div className="w-12 h-12 rounded-xl bg-black/5 flex items-center justify-center mb-4">
@@ -45,7 +43,7 @@ export function CaseStudiesPage() {
                   <Clock className="w-3.5 h-3.5" />
                   {c.comingSoon}
                 </span>
-              </motion.div>
+              </Reveal>
             );
           })}
         </div>
