@@ -1,6 +1,6 @@
 import { Suspense, useEffect, useMemo, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { useGLTF, Environment } from '@react-three/drei';
+import { useGLTF, Environment, Sparkles, ContactShadows } from '@react-three/drei';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import * as THREE from 'three';
@@ -31,20 +31,84 @@ function useNormalizedScene(scene: THREE.Group) {
   }, [scene]);
 }
 
+/** Soft radial-gradient sprite used as a cheap, robust glow halo — real
+ * bloom post-processing fights the canvas's transparent background (washes
+ * out against the light page instead of glowing), so this additive sprite
+ * fakes the same effect without a post-processing pipeline. */
+function useGlowTexture() {
+  return useMemo(() => {
+    const size = 128;
+    const canvas = document.createElement('canvas');
+    canvas.width = size;
+    canvas.height = size;
+    const ctx = canvas.getContext('2d')!;
+    const gradient = ctx.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
+    gradient.addColorStop(0, 'rgba(0,102,255,0.85)');
+    gradient.addColorStop(0.4, 'rgba(0,102,255,0.35)');
+    gradient.addColorStop(1, 'rgba(0,102,255,0)');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, size, size);
+    const texture = new THREE.CanvasTexture(canvas);
+    return texture;
+  }, []);
+}
+
 function OrbModel() {
   const { scene } = useGLTF(MODEL_PATH);
   const normalized = useNormalizedScene(scene);
+  const glowTexture = useGlowTexture();
+
+  // High-gloss ceramic shell: strong clearcoat + env reflections read as
+  // premium glass/porcelain. Only a hint of transmission — real transmission
+  // needs something opaque behind it to refract, and our canvas is
+  // transparent, so anything higher makes the whole shell nearly vanish.
+  const shellMaterial = useMemo(
+    () =>
+      new THREE.MeshPhysicalMaterial({
+        color: '#f8fafc',
+        metalness: 0.12,
+        roughness: 0.08,
+        clearcoat: 1,
+        clearcoatRoughness: 0.06,
+        transmission: 0.06,
+        thickness: 0.4,
+        ior: 1.4,
+        envMapIntensity: 2.5,
+      }),
+    []
+  );
+
+  useEffect(() => () => shellMaterial.dispose(), [shellMaterial]);
+  useEffect(() => () => glowTexture.dispose(), [glowTexture]);
 
   useEffect(() => {
     normalized.traverse((child) => {
       if (child instanceof THREE.Mesh) {
+        child.material = shellMaterial;
         child.castShadow = true;
         child.receiveShadow = true;
       }
     });
-  }, [normalized]);
+  }, [normalized, shellMaterial]);
 
-  return <primitive object={normalized} />;
+  return (
+    <>
+      <primitive object={normalized} />
+      <mesh>
+        <icosahedronGeometry args={[TARGET_SIZE * 0.3, 3]} />
+        <meshStandardMaterial color="#0066FF" emissive="#0066FF" emissiveIntensity={2.4} toneMapped={false} />
+      </mesh>
+      <sprite scale={[TARGET_SIZE * 1.7, TARGET_SIZE * 1.7, 1]}>
+        <spriteMaterial
+          map={glowTexture}
+          transparent
+          depthWrite={false}
+          blending={THREE.AdditiveBlending}
+          toneMapped={false}
+        />
+      </sprite>
+    </>
+  );
 }
 
 /** Pulsing wireframe placeholder shown while the .glb streams in */
@@ -66,7 +130,7 @@ function OrbFallback() {
   );
 }
 
-/** Slow continuous spin + damped tilt toward the cursor, independent of scroll */
+/** Slow continuous spin + springy damped tilt toward the cursor, independent of scroll */
 function TiltRig({ children }: { children: React.ReactNode }) {
   const ref = useRef<THREE.Group>(null);
   const pointer = useRef({ x: 0, y: 0 });
@@ -85,10 +149,10 @@ function TiltRig({ children }: { children: React.ReactNode }) {
   useFrame((_, delta) => {
     const group = ref.current;
     if (!group) return;
-    const damp = Math.min(delta * 3, 1);
+    const damp = Math.min(delta * 4, 1);
     autoAngle.current += delta * 0.15;
-    tilt.current.x += (pointer.current.y * -0.22 - tilt.current.x) * damp;
-    tilt.current.y += (pointer.current.x * 0.35 - tilt.current.y) * damp;
+    tilt.current.x += (pointer.current.y * -0.28 - tilt.current.x) * damp;
+    tilt.current.y += (pointer.current.x * 0.42 - tilt.current.y) * damp;
     group.rotation.x = tilt.current.x;
     group.rotation.y = autoAngle.current + tilt.current.y;
   });
@@ -132,7 +196,11 @@ function ScrollRig({ children }: { children: React.ReactNode }) {
     });
 
     const handleLoad = () => ScrollTrigger.refresh();
-    window.addEventListener('load', handleLoad);
+    if (document.readyState === 'complete') {
+      ScrollTrigger.refresh();
+    } else {
+      window.addEventListener('load', handleLoad);
+    }
 
     return () => {
       window.removeEventListener('load', handleLoad);
@@ -162,7 +230,7 @@ export function OrbScene() {
         gl={{ alpha: true, antialias: true }}
         style={{ background: 'transparent' }}
       >
-        <ambientLight intensity={0.6} />
+        <ambientLight intensity={0.5} />
         <directionalLight
           position={[3, 5, 2]}
           intensity={1.2}
@@ -170,13 +238,23 @@ export function OrbScene() {
           shadow-mapSize={[1024, 1024]}
           shadow-radius={8}
         />
-        <pointLight color="#0066FF" intensity={2} position={[-2.5, -1, 2]} />
+        <pointLight color="#0066FF" intensity={3} position={[-2.5, -1, 2]} />
         <Suspense fallback={<OrbFallback />}>
           <ScrollRig>
             <TiltRig>
               <OrbModel />
             </TiltRig>
+            <Sparkles
+              count={70}
+              scale={[3.2, 3.2, 3.2]}
+              size={2.5}
+              speed={0.25}
+              opacity={0.55}
+              color="#8fc7ff"
+              noise={1}
+            />
           </ScrollRig>
+          <ContactShadows position={[1.6, -0.85, 0]} opacity={0.35} scale={4} blur={2.5} far={2} color="#0066FF" />
           <Environment preset="studio" />
         </Suspense>
       </Canvas>
